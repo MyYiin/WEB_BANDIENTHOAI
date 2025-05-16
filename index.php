@@ -68,10 +68,14 @@
             </div>
 
             <!-- Cart -->
+             <?php $count = isset($_SESSION['cart']) ?array_sum($_SESSION['cart']) : 0 ?>
             <a href="user/pages/giohang.php" class="text-dark position-relative fs-5">
                 <i class="fas fa-cart-shopping"></i>
-                <!-- Thêm số lượng nếu có -->
-                <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span> -->
+                <?php if($count > 0): ?>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.75rem; min-width: 1.5em;">
+                        <?= $count ?>
+                    </span>
+                <?php endif; ?>
             </a>
             </div>
         </div>

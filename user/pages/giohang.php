@@ -52,15 +52,47 @@
     <title>Giỏ hàng</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+    <style>
+        .breadcrumb 
+        {
+        background-color: transparent;
+        font-size: 0.95rem;
+        }
+        .breadcrumb a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .table th {
+            background-color: #e3f2fd;
+            font-weight: bold;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.4em 0.6em;
+        }
+
+    </style>
 <body>
 <div class="container py-5">
+    <nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../index.php">Trang chủ</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
+    </ol>
+</nav>
+
     <h2 class="text-center text-primary fw-bold mb-4">🛒 Giỏ hàng của bạn</h2>
 
     <?php if (empty($_SESSION['cart'])): ?>
         <p class="text-center text-danger">Giỏ hàng của bạn đang trống.</p>
     <?php else: ?>
         <form method="post">
-            <table class="table table-bordered text-center align-middle">
+            <table class="table table-bordered text-center align-middle shadow-sm">
                 <thead class="table-secondary">
                     <tr>
                         <th>Hình ảnh</th>
@@ -99,12 +131,16 @@
             </table>
 
             <div class="d-flex justify-content-between">
-                <button type="submit" name="update_cart" class="btn btn-warning">Cập nhật giỏ hàng</button>
-                <h4>Tổng cộng: <span class="text-success"><?= number_format($total) ?>₫</span></h4>
+                <button type="submit" name="update_cart" class="btn btn-warning">
+                    <i class="fas fa-sync-alt"></i> Cập nhật giỏ hàng
+                </button>
+                <h4 class="text-end">Tổng cộng: <span class="text-success"><?= number_format($total) ?>₫</span></h4>
             </div>
 
             <div class="text-end mt-3">
-                <a href="checkout.php" class="btn btn-success">Tiến hành đặt hàng</a>
+                <a href="checkout.php" class="btn btn-success">
+                    <i class="fas fa-credit-card"></i> Tiến hành đặt hàng
+                </a>
             </div>
         </form>
     <?php endif; ?>
