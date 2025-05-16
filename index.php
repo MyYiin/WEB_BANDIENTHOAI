@@ -26,48 +26,70 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="logo"></div>
-            
-            <div class="search-bar">
-                <input type="text" placeholder="Search...">
-                <button type="submit">Search</button>
+
+            <!-- Header -->
+        <div class="header py-3 bg-white shadow-sm border-bottom">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-3">
+
+            <!-- Logo -->
+            <div class="logo d-flex align-items-center">
+                <img src="user/images/logo.jpg" alt="Phone Store" height="100">
             </div>
 
-            <div class="user dropdown">
-                <?php 
-                    session_start(); 
-                    $tenNguoiDung = $_SESSION['HoTen'] ?? null;
-                ?>
+            <!-- Search -->
+            <form class="search-bar d-flex flex-grow-1 mx-3" role="search" style="max-width: 500px;">
+            <input class="form-control me-2" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+            <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+
+            <!-- User & Cart -->
+            <div class="d-flex align-items-center gap-3">
+
+            <?php 
+                session_start(); 
+                $tenNguoiDung = $_SESSION['HoTen'] ?? null;
+            ?>
+
+            <!-- User -->
+            <div class="dropdown">
                 <?php if ($tenNguoiDung): ?>
-                    <a class="btn btn-light dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-circle-user"></i> <?php echo htmlspecialchars($tenNguoiDung); ?>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                        <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
-                        <li><a class="dropdown-item" href="dangxuat.php">Đăng xuất</a></li>
-                    </ul>
+                <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-circle-user me-1"></i> <?php echo htmlspecialchars($tenNguoiDung); ?>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
+                    <li><a class="dropdown-item" href="dangxuat.php">Đăng xuất</a></li>
+                </ul>
                 <?php else: ?>
-                    <a href="dangnhap.php" class="btn btn-light text-dark">
-                        <i class="fa-solid fa-circle-user"></i> Đăng nhập
-                    </a>
+                <a href="dangnhap.php" class="btn btn-outline-primary">
+                    <i class="fas fa-circle-user me-1"></i> Đăng nhập
+                </a>
                 <?php endif; ?>
             </div>
 
-            <div class="cart">
-                <i class="fa-solid fa-cart-shopping"></i>
+            <!-- Cart -->
+            <a href="giohang.php" class="text-dark position-relative fs-5">
+                <i class="fas fa-cart-shopping"></i>
+                <!-- Thêm số lượng nếu có -->
+                <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span> -->
+            </a>
             </div>
-            
         </div>
-        <div class="menu">
-            <ul class="menu-list">
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Danh mục</a></li>
-                <li><a href="#">Liên hệ</a></li>
-                <li><a href="#">Khách Hàng</a></li>
-                <li><a href="#">Giới thiệu</a></li>
+        </div>
+
+        <!-- Menu -->
+        <div class="menu bg-primary text-white">
+        <div class="container">
+            <ul class="nav justify-content-center py-2">
+            <li class="nav-item"><a class="nav-link text-white" href="#">Trang chủ</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Danh mục</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Liên hệ</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Khách hàng</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Giới thiệu</a></li>
             </ul>
-        </div>  
+        </div>
+        </div>
+
 
         <!-- main content -->
         <div id="content">
@@ -106,6 +128,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="../script/index.js"></script>
+    <script src="user/script/index.js"></script>
 </body>
 </html>

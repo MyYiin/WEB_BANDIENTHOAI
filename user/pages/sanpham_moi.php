@@ -11,7 +11,12 @@
     }
     ?>
 
-    <h2>Sản phẩm mới</h2>
+   
+    <h4 class="text-center my-4">
+    <span class="px-4 py-2 rounded-pill text-white fw-semibold" style="background: linear-gradient(to right, #2563EB, #3B82F6);">
+        <i class="fas fa-bolt"></i> Sản phẩm mới
+    </span>
+    </h4>
     <div class='danhsachsanpham'>
     <?php while($row = $result->fetch_array(MYSQLI_ASSOC)): ?>
         <div class='khungsanpham'>
