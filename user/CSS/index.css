@@ -1,83 +1,94 @@
-/* Reset và body giữ nguyên */
+/* Reset & Body */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 body {
   background-color: #F9FAFB;
-  font-family: Arial, sans-serif;
   color: #111827;
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-/* Container có thể giữ nguyên hoặc tùy bạn */
+/* Container mặc định */
 .container {
-  font-size: 24px;
-  font-family: "Times New Roman", Times, serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Header cải tiến */
+/* ========================= */
+/* HEADER */
+/* ========================= */
 .header {
   background-color: #ffffff;
   padding: 12px 40px;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  position: relative;
 }
 
 /* Logo */
-.logo {
-  background-image: url("../images/logo.jpg");
-  width: 220px;
-  height: 80px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+.logo img {
+  height: 42px;
 }
 
-/* Thanh tìm kiếm */
+/* SEARCH BAR */
 .search-bar {
   flex-grow: 1;
   display: flex;
   max-width: 600px;
-  min-width: 300px;
-  margin-left: 20px;
+  min-width: 280px;
+  margin: 0 20px;
 }
-input[type="text"] {
+
+.search-bar input[type="text"] {
   width: 100%;
   padding: 10px 15px;
   font-size: 16px;
   border-radius: 8px 0 0 8px;
   border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
 }
-button[type="submit"] {
+
+.search-bar input[type="text"]:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.search-bar button[type="submit"] {
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 0 8px 8px 0;
   border: none;
-  background-color: #2563EB; /* Màu xanh chính */
+  background-color: #2563EB;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-button[type="submit"]:hover {
+
+.search-bar button[type="submit"]:hover {
   background-color: #1D4ED8;
 }
 
-/* Người dùng và giỏ hàng */
+/* USER + CART */
 .user, .cart {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 .user i, .cart i {
-  font-size: 28px;
+  font-size: 24px;
   color: #1F2937;
 }
 .user p {
@@ -85,30 +96,40 @@ button[type="submit"]:hover {
   color: #1F2937;
 }
 
-/* Menu chính */
-.menu-list {
-  background-color: #1F2937; /* Dark navy */
+/* ========================= */
+/* MENU CHÍNH */
+/* ========================= */
+.menu {
   width: 100%;
+   background-color: #1F2937;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+   background: linear-gradient(to right, #2563EB, #3B82F6);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-list {
   display: flex;
   justify-content: center;
-}
-.menu-list ul {
-  display: flex;
   list-style: none;
-  list-style-type: none;
-
   padding: 0;
   margin: 0;
+  flex-wrap: wrap;
 }
+
 .menu-list li a {
   display: block;
-  padding: 14px 20px;
+  padding: 14px 24px;
   text-decoration: none;
   color: white;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
+  font-size: 17px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
+
 .menu-list li a:hover {
   background-color: #2563EB;
-  color: white;
+  color: #fff;
+  border-radius: 5px;
 }
