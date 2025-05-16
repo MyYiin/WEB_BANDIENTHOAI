@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         $password = md5($password);
 
       $sql_add = "INSERT INTO `tbl_nguoidung` (`TenNguoiDung`, `TenDangNhap`, `MatKhau`, `QuyenHan`, `Khoa`)
-VALUES ('$tennd', '$username', '$password', 1, 0)";
+                  VALUES ('$tennd', '$username', '$password', 1, 0)";
 
         $add_user = $connect->query($sql_add);
 
@@ -47,7 +47,6 @@ VALUES ('$tennd', '$username', '$password', 1, 0)";
         } else {
           $errorMsg = "Lỗi khi đăng ký: " . $connect->error;
                     echo "<script>alert(" . json_encode($errorMsg) . "); window.history.back();</script>";
-
             exit();
         }
     }

@@ -15,7 +15,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-        <link rel="stylesheet" href="user/CSS/dangky.css">
+    <link rel="stylesheet" href="user/CSS/dangky.css">
+    
 </head>
 <body>
     <div class="card">

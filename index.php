@@ -153,6 +153,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <script src="user/script/index.js"></script>
-
+    <script src="user/script/xemchitiet.js"></script>
+    <script src="user/script/loadmore.js"></script>
 </body>
 </html>
