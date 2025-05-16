@@ -13,7 +13,7 @@
       <a href="#" class="xemchitiet text-decoration-none text-dark" 
          data-id_sp="<?= $row['IdSanPham'] ?>" 
          data-id_nsx="<?= $row['IdNhaSanXuat'] ?>">
-        <img src="user/images/<?= $row['HinhAnh'] ?>" 
+        <img src="images/<?= $row['HinhAnh'] ?>" 
              class="card-img-top" 
              alt="<?= htmlspecialchars($row['TenSanPham']) ?>">
         <div class="card-body">

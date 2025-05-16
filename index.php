@@ -32,7 +32,7 @@
 
             <!-- Logo -->
             <div class="logo d-flex align-items-center">
-                <a href="index.php"> <img src="user/images/logo.jpg" alt="Phone Store" height="100"></a>
+                <a href="index.php"> <img src="images/logo.jpg" alt="Phone Store" height="100"></a>
             </div>
 
             <!-- Search -->

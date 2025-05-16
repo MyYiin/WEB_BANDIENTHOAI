@@ -20,7 +20,7 @@
 <body>
     <div class="card">
         <!-- Thêm logo nếu có -->
-        <img src="user/images/logo.jpg" alt="MobileZone Logo" class="brand-logo">
+        <img src="images/logo.jpg" alt="MobileZone Logo" class="brand-logo">
 
         <h2>Đăng nhập</h2>
         <form action="xulydangnhap.php" method="POST">

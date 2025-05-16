@@ -31,7 +31,7 @@
                    data-id_sp="<?= $row['IdSanPham'] ?>" 
                    data-id_nsx="<?= $row['IdNhaSanXuat'] ?>">
 
-                    <img src="user/images/<?= $row['HinhAnh'] ?>" 
+                    <img src="images/<?= $row['HinhAnh'] ?>" 
                          class="card-img-top mx-auto mt-3"
                          style="width: 100%; height: 180px; object-fit: contain;" 
                          alt="<?= $row['TenSanPham'] ?>">
