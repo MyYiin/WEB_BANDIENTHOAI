@@ -1,4 +1,5 @@
 <?php
+	include("../includes/connect.php");
 	$IdSanPham = $_GET['id_sp'];
 	
 	$sql = "SELECT *
@@ -19,35 +20,42 @@
 	$truyvan_luotxem = $connect->query($sql);
 	
 	
-	$giaban = $dong['DonGia'] - (($dong['TiLeGiamGia'] /100) * $dong['DonGia']);
+	$giaban = $dong['DonGia'] * (1 - $dong['TiLeGiamGia']/100);
 	
 ?>
-<table>
-	<tr> 
-		<td>
-			<h3><?php echo $dong['TenSanPham']; ?></h3>
-			<p class="TomTat">Nhà sản xuất: <?php echo $dong['TenNhaSanXuat']; ?></p>
-			<p class="TomTat">Giá gốc:<span class="dongia"><?php echo number_format($dong['DonGia']); ?> đ</span></p>
-			<p class="TomTat">Giá bán: <span class="giaban"><?php echo number_format($giaban); ?> đ</p>
-			<p class="TomTat">Số lượng: <?php echo $dong['SoLuong']; ?></p>
-			<p class="TomTat">Tỉ lệ giảm giá: <?php echo $dong['TiLeGiamGia']; ?></p>
-			<p><?php echo    "<img width=\"400\" src=" . $dong["HinhAnh"] . ">"; ?></p>			
-		</td>
-		<td>
-			<img src="images/muangay.jpg" />
-		</td>
-		<tr>
-			<td colspan="2">
-				<h4 >Cấu hình:</h4>
-				<p class="NoiDung"><?php echo $dong['CauHinh']; ?></p>
-			</td>
-		</tr>
-	</tr>
-</table>
+<div class="container my-5 chitietsanpham bg-white p-4 rounded shadow-sm">
+  	<h2 class="mb-4 text-primary"><?= htmlspecialchars($dong['TenSanPham']) ?></h2>
 
-<p>..................................................................................................</p>
-<h3>Sản phẩm cùng nhà sản xuất </h3>
-<?php  
-	
-	include "sanpham_nhasanxuat.php";
-?>
+  	<div class="row g-4">
+    	<!-- Ảnh sản phẩm -->
+		<div class="col-md-5">
+		<img src="user/images/<?= htmlspecialchars($dong['HinhAnh']) ?>" class="img-fluid rounded shadow-sm w-100" alt="<?= htmlspecialchars($dong['TenSanPham']) ?>">
+		</div>
+
+		<!-- Thông tin sản phẩm -->
+		<div class="col-md-7">
+			<p><strong>Nhà sản xuất:</strong> <?= htmlspecialchars($dong['TenNhaSanXuat']) ?></p>
+			<p><strong>Giá gốc:</strong>
+				<span class="text-muted text-decoration-line-through"><?= number_format($dong['DonGia']) ?> đ</span>
+			</p>
+			<p><strong>Giá bán:</strong>
+				<span class="text-danger fw-bold fs-5"><?= number_format($giaban) ?> đ</span>
+			</p>
+			<p><strong>Giảm giá:</strong>
+				<span class="badge bg-danger"><?= $dong['TiLeGiamGia'] ?>%</span>
+			</p>
+
+			<a href="#" class="btn btn-primary mt-3">
+				<i class="fas fa-cart-plus me-2"></i> Mua ngay
+			</a>
+    	</div>
+  </div>
+
+  <hr class="my-4">
+
+  <!-- Cấu hình -->
+  <h4 class="mb-3">Cấu hình sản phẩm</h4>
+  <div class="bg-light p-3 rounded border" style="white-space: pre-line;">
+    <?= nl2br(htmlspecialchars($dong['CauHinh'])) ?>
+  </div>
+</div>
