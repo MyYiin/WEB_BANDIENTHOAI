@@ -80,7 +80,7 @@
         <div class="menu bg-primary text-white">
         <div class="container">
             <ul class="nav justify-content-center py-2">
-            <li class="nav-item"><a class="nav-link text-white" href="#">Trang chủ</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="index.php">Trang chủ</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#">Danh mục</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#">Liên hệ</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#">Khách hàng</a></li>
@@ -111,9 +111,36 @@
                     include("user/pages/sanpham_moi.php");
                 ?>
             </div>
-
+            
+            <div class="danhsach">
+                <?php
+                    include("user/pages/danhsachsanpham.php");
+                ?>
+            </div>
             
         </div>
+
+        <footer class="bg-dark text-white mt-5 p-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <h6>Chính sách</h6>
+                    <ul class="list-unstyled">
+                        <li>Bảo hành 12 tháng</li>
+                        <li>Đổi trả trong 7 ngày</li>
+                        <li>Giao hàng toàn quốc</li>
+                    </ul>
+                </div>
+                    <div class="col-md-4">
+                    <h6>Liên hệ</h6>
+                    <p>Hotline: 1900 1234<br>Email: support@phonestore.vn</p>
+                </div>
+                <div class="col-md-4">
+                    <h6>Địa chỉ</h6>
+                    <p>123 Nguyễn Trãi, Q.1, TP.HCM</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
 
     <!-- Bootstrap Bundle -->
