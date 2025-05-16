@@ -32,11 +32,11 @@
 
             <!-- Logo -->
             <div class="logo d-flex align-items-center">
-                <img src="user/images/logo.jpg" alt="Phone Store" height="100">
+                <a href="index.php"> <img src="user/images/logo.jpg" alt="Phone Store" height="100"></a>
             </div>
 
             <!-- Search -->
-            <form class="search-bar d-flex flex-grow-1 mx-3" role="search" style="max-width: 500px;" action="user/pages/search.php" method="GET">
+            <form class="search-bar d-flex flex-grow-1 mx-3" id="search-form" style="max-width: 500px;" action="user/pages/timkiem_xuly.php" method="GET">
                 <input class="form-control me-2" type="search" name="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search" required>
                 <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
             </form>
@@ -93,32 +93,44 @@
 
         <!-- main content -->
         <div id="content">
-            <!-- banner -->
-            <div class="owl-carousel owl-theme"> 
-                <div class="item"><img src="user/banner/banner3.png" alt=""></div>
-                <div class="item"><img src="user/banner/banner1.png" alt=""></div>
-                <div class="item"><img src="user/banner/banner2.png" alt=""></div>
-                <div class="item"><img src="user/banner/banner3.png" alt=""></div>
-                <div class="item"><img src="user/banner/banner4.png" alt=""></div>
-                <div class="item"><img src="user/banner/banner5.png" alt=""></div>
-                <div class="item"><img src="user/banner/banner6.png" alt=""></div>
-                <div class="item"><img src="user/banner/banner7.png" alt=""></div>
-                <div class="item"><img src="user/banner/banner8.png" alt=""></div>
-                <div class="item"><img src="user/banner/banner9.png" alt=""></div>
-            </div>
+            <?php
+                if(isset($_GET['search']) && !empty(trim($_GET['search']))){
+                   ?>
+                    <div class="container py-4">
+                        <?php include("user/pages/timkiem_xuly.php");?>
+                    </div>
+                    <?php
+                }
+                else
+                {?>
+                        <!-- banner -->
+                    <div class="owl-carousel owl-theme"> 
+                        <div class="item"><img src="user/banner/banner3.png" alt=""></div>
+                        <div class="item"><img src="user/banner/banner1.png" alt=""></div>
+                        <div class="item"><img src="user/banner/banner2.png" alt=""></div>
+                        <div class="item"><img src="user/banner/banner3.png" alt=""></div>
+                        <div class="item"><img src="user/banner/banner4.png" alt=""></div>
+                        <div class="item"><img src="user/banner/banner5.png" alt=""></div>
+                        <div class="item"><img src="user/banner/banner6.png" alt=""></div>
+                        <div class="item"><img src="user/banner/banner7.png" alt=""></div>
+                        <div class="item"><img src="user/banner/banner8.png" alt=""></div>
+                        <div class="item"><img src="user/banner/banner9.png" alt=""></div>
+                    </div>
 
-            <div class="new_product">
-                <?php
-                    include("user/pages/sanpham_moi.php");
+                    <div class="new_product">
+                        <?php
+                            include("user/pages/sanpham_moi.php");
+                        ?>
+                    </div>
+                    
+                    <div class="danhsach">
+                        <?php
+                            include("user/pages/danhsachsanpham.php");
+                        ?>
+                    </div>
+                      <?php
+                } 
                 ?>
-            </div>
-            
-            <div class="danhsach">
-                <?php
-                    include("user/pages/danhsachsanpham.php");
-                ?>
-            </div>
-            
         </div>
 
         <footer class="bg-dark text-white mt-5 p-4">
@@ -156,5 +168,6 @@
     <script src="user/script/index.js"></script>
     <script src="user/script/xemchitiet.js"></script>
     <script src="user/script/loadmore.js"></script>
+    <script src="user/script/timkiem.js"></script>
 </body>
 </html>

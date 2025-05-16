@@ -1,5 +1,5 @@
 <?php
-	include("../includes/connect.php");
+	include("../user/includes/connect.php");
 	$IdSanPham = $_GET['id_sp'];
 	
 	$sql = "SELECT *
