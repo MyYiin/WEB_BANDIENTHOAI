@@ -1,5 +1,5 @@
 <?php
-	include("../user/includes/connect.php");
+	include("../includes/connect.php");
 	$IdSanPham = $_GET['id_sp'];
 	
 	$sql = "SELECT *
@@ -45,7 +45,7 @@
 				<span class="badge bg-danger"><?= $dong['TiLeGiamGia'] ?>%</span>
 			</p>
 
-			<a href="#" class="btn btn-primary mt-3">
+			<a href="user/pages/giohang.php?action=add&id_sp=<?=$dong['IdSanPham']?>" class="btn btn-primary mt-3">
 				<i class="fas fa-cart-plus me-2"></i> Mua ngay
 			</a>
     	</div>

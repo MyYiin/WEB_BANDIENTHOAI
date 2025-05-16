@@ -16,7 +16,9 @@
     }
 ?>
 
-<h2 class="text-center mb-4 text-primary fw-bold">Danh sách sản phẩm nổi bật</h2>
+<h2 class="text-center mb-4 text-primary fw-bold section-title">
+  Danh sách sản phẩm nổi bật
+</h2>
 
 <input type="hidden" id="row" value="10">
 <input type="hidden" id="all" value="<?= $allcount ?>">
