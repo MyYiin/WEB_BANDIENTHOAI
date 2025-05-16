@@ -1,108 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-   
-    <link rel="stylesheet" href="../CSS/index.css">
-    <!-- <link rel="stylesheet" href="../CSS/sanphammoi.css"> -->
-    
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-    
-    <title>Trang Chủ</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Quản Trị</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/index.css">
+
+  <style>
+ 
+  </style>
 </head>
 <body>
-    <div>
-        
-        <div class="container">
-            <div class="menu">
-                <ul class="menu-list">
-                    <li><a href="#" id="loadSanPham">Danh sách sản phẩm</a></li>
-                    <li><a href="#" id="loadKhachHang">Danh sách khách hàng</a></li>
-                    <li><a href="#" id="loadNguoiDung">Danh sách người dùng</a></li>
-                    <li><a href="#" id="loadNhaSanXuat">Danh sách nhà sản xuất</a></li>
-                </ul>
-            </div>  
-            <!-- main content -->
-            <div id="content">
-                <!-- Nội dung khi load cái trang -->
-                 <?php
-					// $do = isset($_GET['do']) ? $_GET['do'] : "home";
 
-					// include $do . ".php";
-				?>
-            </div>
-        
-        </div>
-    </div>
+<div class="container">
+  <!-- Sidebar -->
+  <div class="menu">
+    <ul class="menu-list">
+        <li><a href="#" data-load="dssanpham.php" data-form="themsanpham.php">📱 Danh sách sản phẩm</a></li>
+        <li><a href="#" data-load="dskhachhang.php" data-form="themkhachhang.php">👤 Danh sách khách hàng</a></li>
+        <li><a href="#" data-load="dsnguoidung.php" data-form="themnguoidung.php">🔐 Danh sách người dùng</a></li>
+        <li><a href="#" data-load="dsnhasanxuat.php" data-form="themNSX.php">🏭 Danh sách nhà sản xuất</a></li>
+        <li> <a href="../../dangxuat.php" onclick="return confirm('Bạn có chắc chắn muốn đăng xuất không?')">🚪 Đăng xuất</a></li>
+    </ul>
+  </div>
 
-   <script>
-        function loadContent(endpoint, errorMessage, formEndpoint) {
-            fetch(endpoint)
-                .then(response => {
-                    if (!response.ok) throw new Error("Lỗi kết nối");
-                    return response.text();
-                })
-                .then(data => {
-                    const contentDiv = document.getElementById('content');
-                    contentDiv.innerHTML = data;
+  <!-- Main content -->
+  <div id="content">
+    <h3>Chào mừng đến trang quản trị</h3>
+    <p>Chọn một mục ở menu bên trái để thao tác.</p>
+  </div>
+</div>
 
-                    // Tạo nút Thêm ở góc phải bên dưới
-                    const addButton = document.createElement('button');
-                    addButton.textContent = 'Thêm';
-                    addButton.classList.add('add-button');
-                    contentDiv.appendChild(addButton);
+<script>
+  function loadContent(endpoint, formEndpoint) {
+    fetch(endpoint)
+      .then(res => {
+        if (!res.ok) throw new Error("Lỗi khi tải dữ liệu.");
+        return res.text();
+      })
+      .then(data => {
+        const content = document.getElementById("content");
+        content.innerHTML = data;
 
-                    // Khi bấm Thêm, thay nội dung bằng form thêm
-                    addButton.addEventListener('click', () => {
-                        fetch(formEndpoint)
-                            .then(response => {
-                                if (!response.ok) throw new Error("Không thể tải form.");
-                                return response.text();
-                            })
-                            .then(formHTML => {
-                                contentDiv.innerHTML = formHTML;
-                            })
-                            .catch(error => {
-                                contentDiv.innerHTML = `<p>${error.message}</p>`;
-                                console.error(error);
-                            });
-                    });
-                })
-                .catch(error => {
-                    document.getElementById('content').innerHTML = `<p>${errorMessage}</p>`;
-                    console.error(error);
-                });
-        }
+        // Tạo nút thêm
+        const addBtn = document.createElement("button");
+        addBtn.textContent = "Thêm";
+        addBtn.classList.add("add-button");
+        content.appendChild(addBtn);
 
-        // Gán sự kiện các menu
-        document.getElementById('loadSanPham').addEventListener('click', function(e) {
-            e.preventDefault();
-            loadContent('dssanpham.php', 'Không thể tải danh sách sản phẩm.', 'themsanpham.php');
+        addBtn.addEventListener("click", () => {
+          fetch(formEndpoint)
+            .then(res => {
+              if (!res.ok) throw new Error("Lỗi khi tải form.");
+              return res.text();
+            })
+            .then(html => content.innerHTML = html)
+            .catch(err => content.innerHTML = `<p>${err.message}</p>`);
         });
+      })
+      .catch(err => {
+        document.getElementById("content").innerHTML = `<p class="text-danger">${err.message}</p>`;
+      });
+  }
 
-        document.getElementById('loadKhachHang').addEventListener('click', function(e) {
-            e.preventDefault();
-            loadContent('dskhachhang.php', 'Không thể tải danh sách khách hàng.', 'themkhachhang.php');
-        });
+  // Bắt sự kiện cho các link menu
+ document.querySelectorAll(".menu-list a").forEach(link => {
+  link.addEventListener("click", e => {
+    const endpoint = link.dataset.load;
+    const formEndpoint = link.dataset.form;
 
-        document.getElementById('loadNguoiDung').addEventListener('click', function(e) {
-            e.preventDefault();
-            loadContent('dsnguoidung.php', 'Không thể tải danh sách người dùng.', 'themnguoidung.php');
-        });
+    // Chỉ xử lý fetch nếu có data-load (bỏ qua Đăng xuất)
+    if (!endpoint) return;
 
-        document.getElementById('loadNhaSanXuat').addEventListener('click', function(e) {
-            e.preventDefault();
-            loadContent('dsnhasanxuat.php', 'Không thể tải danh sách nhà sản xuất.', 'themNSX.php');
-        });
-    </script>
+    e.preventDefault(); // ngăn link chuyển trang
+    loadContent(endpoint, formEndpoint);
+  });
+});
 
 
-
-    <!-- JavaScript
-    <script src="Script/index.js"></script> -->
 </body>
 </html>
