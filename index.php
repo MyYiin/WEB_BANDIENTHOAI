@@ -34,33 +34,25 @@
                 <button type="submit">Search</button>
             </div>
 
-        <!-- <div class="user">
-            <a href="dangnhap.php" title="Đăng nhập">
-                <i class="fa-solid fa-circle-user"></i>
-             </a>
-        </div>  -->
-
-        <div class="user dropdown">
-            <?php 
-                session_start(); 
-                $tenNguoiDung = $_SESSION['HoTen'] ?? null;
-            ?>
-            <?php if ($tenNguoiDung): ?>
-                <a class="btn btn-light dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-circle-user"></i> <?php echo htmlspecialchars($tenNguoiDung); ?>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                    <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
-                    <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
-                </ul>
-            <?php else: ?>
-                <a href="dangnhap.php" class="btn btn-light text-dark">
-                    <i class="fa-solid fa-circle-user"></i> Đăng nhập
-                </a>
-            <?php endif; ?>
-        </div>
-
-
+            <div class="user dropdown">
+                <?php 
+                    session_start(); 
+                    $tenNguoiDung = $_SESSION['HoTen'] ?? null;
+                ?>
+                <?php if ($tenNguoiDung): ?>
+                    <a class="btn btn-light dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-circle-user"></i> <?php echo htmlspecialchars($tenNguoiDung); ?>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
+                        <li><a class="dropdown-item" href="dangxuat.php">Đăng xuất</a></li>
+                    </ul>
+                <?php else: ?>
+                    <a href="dangnhap.php" class="btn btn-light text-dark">
+                        <i class="fa-solid fa-circle-user"></i> Đăng nhập
+                    </a>
+                <?php endif; ?>
+            </div>
 
             <div class="cart">
                 <i class="fa-solid fa-cart-shopping"></i>
@@ -77,7 +69,6 @@
             </ul>
         </div>  
 
-        
         <!-- main content -->
         <div id="content">
             <!-- banner -->
