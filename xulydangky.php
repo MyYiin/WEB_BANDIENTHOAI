@@ -37,12 +37,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         $password = md5($password);
 
       $sql_add = "INSERT INTO `tbl_nguoidung` (`TenNguoiDung`, `TenDangNhap`, `MatKhau`, `QuyenHan`, `Khoa`)
-VALUES ('$tennd', '$username', '$password', 2, 0)";
+VALUES ('$tennd', '$username', '$password', 1, 0)";
 
         $add_user = $connect->query($sql_add);
 
         if($add_user){
-            echo "<script>alert('Đăng ký thành công'); window.location.href='dangnhap.html';</script>";
+            echo "<script>alert('Đăng ký thành công'); window.location.href='dangnhap.php';</script>";
             exit();
         } else {
           $errorMsg = "Lỗi khi đăng ký: " . $connect->error;
