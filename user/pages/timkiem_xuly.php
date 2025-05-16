@@ -24,7 +24,7 @@
         ?>
             <div class="col-md-3 b-4">
             <div class="card h-100 shadow-sm">
-            <img src="user/images/<?= $row['HinhAnh'] ?>" class="card-img-top" alt="<?= $row['TenSanPham'] ?>">
+            <img src="images/<?= $row['HinhAnh'] ?>" class="card-img-top" alt="<?= $row['TenSanPham'] ?>">
             <div class="card-body">
                 <h6 class="card-title"><?=$row['TenSanPham']?></h6>
                 <p class="card-text text-danger fw-bold"><?=number_format($row['DonGia'], 0, ',', '.')?>đ</p>

@@ -20,7 +20,7 @@
             <div class="card h-100 shadow-sm border-0 product-card">
                 <a href="#" class="xemchitiet text-decoration-none text-dark" 
                    data-id_sp="<?= $row['IdSanPham'] ?>" data-id_nsx="<?= $row['IdNhaSanXuat'] ?>">
-                    <img src="user/images/<?= $row['HinhAnh'] ?>" class="card-img-top" alt="<?= $row['TenSanPham'] ?>">
+                    <img src="images/<?= $row['HinhAnh'] ?>" class="card-img-top" alt="<?= $row['TenSanPham'] ?>">
                     <div class="card-body">
                         <h6 class="card-title text-truncate"><?= $row['TenSanPham'] ?></h6>
                         <p class="card-text text-danger fw-bold"><?= number_format($row['DonGia']) ?> đ</p>

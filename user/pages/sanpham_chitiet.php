@@ -29,7 +29,7 @@
   	<div class="row g-4">
     	<!-- Ảnh sản phẩm -->
 		<div class="col-md-5">
-		<img src="user/images/<?= htmlspecialchars($dong['HinhAnh']) ?>" class="img-fluid rounded shadow-sm w-100" alt="<?= htmlspecialchars($dong['TenSanPham']) ?>">
+		<img src="images/<?= htmlspecialchars($dong['HinhAnh']) ?>" class="img-fluid rounded shadow-sm w-100" alt="<?= htmlspecialchars($dong['TenSanPham']) ?>">
 		</div>
 
 		<!-- Thông tin sản phẩm -->
