@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
    
     <link rel="stylesheet" href="user/CSS/index.css">
-    <link rel="stylesheet" href="user/CSS/sanphammoi.css">
+    <link rel="stylesheet" href="user/CSS/danhsachsanpham.css">
     
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -36,10 +36,11 @@
             </div>
 
             <!-- Search -->
-            <form class="search-bar d-flex flex-grow-1 mx-3" role="search" style="max-width: 500px;">
-            <input class="form-control me-2" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
-            <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+            <form class="search-bar d-flex flex-grow-1 mx-3" role="search" style="max-width: 500px;" action="user/pages/search.php" method="GET">
+                <input class="form-control me-2" type="search" name="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search" required>
+                <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
             </form>
+
 
             <!-- User & Cart -->
             <div class="d-flex align-items-center gap-3">

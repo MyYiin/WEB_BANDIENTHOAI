@@ -1,24 +1,26 @@
-  <?php
-      include("../includes/connect.php");
-      $start = isset($_POST['cot']) ? (int)$_POST['cot'] : 0;
+<?php
+  include("../includes/connect.php");
+  $start = isset($_POST['cot']) ? (int)$_POST['cot'] : 0;
+  $limit = 5;
 
+  $sql = "SELECT * FROM tbl_sanpham ORDER BY LuotXem DESC LIMIT $start, $limit";
+  $res = $connect->query($sql);
 
-      $sql = "SELECT * FROM tbl_sanpham ORDER BY LuotXem LIMIT $start, 5";
-      $res = $connect->query($sql);
-
-      while($row = $res->fetch_assoc()){
-  ?>
- <div class="col-6 col-md-4 col-lg-3 khungsanpham post">
-    <div class="card h-100 shadow-sm">
-      <a href="#" class="xemchitiet text-decoration-none text-dark" data-id_sp="<?= $row['IdSanPham'] ?>" data-id_nsx="<?= $row['IdNhaSanXuat'] ?>">
-        <img src="user/images/<?= $row['HinhAnh'] ?>" class="card-img-top img-fluid" style="height: 180px; object-fit: contain;" alt="<?= $row['TenSanPham'] ?>">
-        <div class="card-body text-center">
-          <h6 class="card-title fw-semibold mb-2"><?= $row['TenSanPham'] ?></h6>
-          <p class="text-danger fw-bold mb-0"><?= number_format($row['DonGia']) ?>đ</p>
+  while ($row = $res->fetch_assoc()) {
+?>
+  <div class="col-1-5 post">
+    <div class="card h-100 shadow-sm border-0 product-card">
+      <a href="#" class="xemchitiet text-decoration-none text-dark" 
+         data-id_sp="<?= $row['IdSanPham'] ?>" 
+         data-id_nsx="<?= $row['IdNhaSanXuat'] ?>">
+        <img src="user/images/<?= $row['HinhAnh'] ?>" 
+             class="card-img-top" 
+             alt="<?= htmlspecialchars($row['TenSanPham']) ?>">
+        <div class="card-body">
+          <h6 class="card-title text-truncate"><?= htmlspecialchars($row['TenSanPham']) ?></h6>
+          <p class="card-text text-danger fw-bold"><?= number_format($row['DonGia'], 0, ',', '.') ?> đ</p>
         </div>
       </a>
     </div>
   </div>
-  <?php
-    }
-  ?>
+<?php } ?>
