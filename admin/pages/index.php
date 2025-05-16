@@ -77,7 +77,7 @@
     loadContent(endpoint, formEndpoint);
   });
 });
-
+</script>
 
 </body>
 </html>
