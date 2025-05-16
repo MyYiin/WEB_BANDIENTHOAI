@@ -1,19 +1,7 @@
 <?php
-	session_start();
-	include("../includes/connect.php");
-?>
+	// session_start();
+	include('user/includes/connect.php');
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="../CSS/dssanpham.css">
-	
-</head>
-<body>
-
-<?php
 	$sql_nsx = "SELECT * FROM tbl_nhasanxuat";
 	$result_nsx = $connect->query($sql_nsx);
 
@@ -40,7 +28,7 @@
 			$giaban = $sp['DonGia'] - (($sp['TiLeGiamGia'] / 100) * $sp['DonGia']);
 			echo "<div class='khungsanpham'>";
 			echo "<a href='sanpham_chitiet.php?id_sp=" . $sp['IdSanPham'] . "&id_nsx=" . $sp['IdNhaSanXuat'] . "'>";
-			echo "<img src='../images/" . htmlspecialchars($sp['HinhAnh']) . "' alt='" . htmlspecialchars($sp['TenSanPham']) . "'>";
+			echo "<img src='user/images/" . htmlspecialchars($sp['HinhAnh']) . "' alt='" . htmlspecialchars($sp['TenSanPham']) . "'>";
 			echo "<div class='card'>";
 			echo "<div class='tendienthoai'>" . htmlspecialchars($sp['TenSanPham']) . "</div>";
 			echo "<div class='giaban'>" . number_format($giaban) . " đ</div>";
@@ -58,6 +46,3 @@
 
 	$connect->close();
 ?>
-
-</body>
-</html>

@@ -1,77 +1,81 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 .new_product {
-    margin: 10px;
-    width: calc(100% - 20px);
-    padding: 5px;
-    overflow: hidden;
+  margin: 10px;
+  width: calc(100% - 20px);
+  padding: 5px;
+  overflow: hidden;
 }
 
 .new_product h2 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #e97510;
-    padding: 10px; 
-    box-sizing: border-box; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #e97510;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .danhsachsanpham {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 10px;
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
+  padding: 10px;
 }
 
 .khungsanpham {
-    width: 100%;
-    max-width: 220px;
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+  width: 100%;
+  max-width: 220px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  background-color: #fff;
 }
 
 .khungsanpham:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .khungsanpham img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-    display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-bottom: 1px solid #eee;
+  padding: 5px;
+  background-color: #fafafa;
 }
 
 .card {
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
-    color: #333;
-    box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
 }
 
-.card img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; 
-    margin-bottom: 5px;
-    border-radius: 8px;
-    display: block;
+.TenSanPham {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  display: block;
+  margin: 8px 0;
+  height: 40px;
+  overflow: hidden;
+}
+
+.dongia {
+  color: #e97510;
+  font-size: 18px;
+  font-weight: bold;
 }

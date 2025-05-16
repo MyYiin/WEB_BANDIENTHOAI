@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheet" href="../CSS/dangnhap.css">
+       <link rel="stylesheet" href="user/CSS/dangnhap.css">
    
     <title>Document</title>
 </head>
 <body>
     <div class="container">
-        <form action="login.php" method="post">
+        <form method="POST" action="xulydangnhap.php">
             <h1>Đăng nhập</h1>
             <div class="username">
                 <label for="username">Tên đăng nhập</label>
@@ -24,7 +24,7 @@
             </div>
             <button type="submit">Đăng nhập</button>
             <div class="register">
-                <p>Bạn chưa có tài khoản? <a href="dangky.html">Đăng ký</a></p>
+                <p>Bạn chưa có tài khoản? <a href="dangky.php">Đăng ký</a></p>
             </div>
            
         </form>
