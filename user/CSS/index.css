@@ -1,3 +1,4 @@
+/* Reset và body giữ nguyên */
 * {
   margin: 0;
   padding: 0;
@@ -5,144 +6,109 @@
   font-family: 'Poppins', sans-serif;
 }
 body {
-  background-color: #f8f9fa;
+  background-color: #F9FAFB;
   font-family: Arial, sans-serif;
-  color: #333333;
+  color: #111827;
   height: 100vh;
   overflow-x: hidden;
 }
+
+/* Container có thể giữ nguyên hoặc tùy bạn */
 .container {
   font-size: 24px;
   font-family: "Times New Roman", Times, serif;
 }
+
+/* Header cải tiến */
 .header {
-  color: #ffffff;
-  padding: 10px 40px;
+  background-color: #ffffff;
+  padding: 12px 40px;
   width: 100%;
-  text-align: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Logo */
 .logo {
   background-image: url("../images/logo.jpg");
-  width: 300px;
-  height: 100px;
+  width: 220px;
+  height: 80px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 }
+
+/* Thanh tìm kiếm */
 .search-bar {
-  flex-grow: 1; 
+  flex-grow: 1;
   display: flex;
-  max-width: 500px;
+  max-width: 600px;
   min-width: 300px;
   margin-left: 20px;
 }
 input[type="text"] {
-  width: 300px;
-  padding: 10px;
-  font-size: 18px;
-  border-radius: 10px 0px 0px 10px;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px 0 0 8px;
   border: 1px solid #ccc;
 }
 button[type="submit"] {
-  width: 160px;
-  padding: 5px;
- font-size: 18px;
-  border-radius: 0px 10px 10px 0px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  background-color: #2563EB; /* Màu xanh chính */
+  color: white;
   cursor: pointer;
-  color: #000;
-  justify-content: center;
-  align-items: center;
-  background-color: #0056b3;
   transition: background-color 0.3s ease;
 }
-button[type="submit"] a {
-  text-decoration: none;
-  color: #000;
-  padding: 20px;
-  font-size: 24px;
-}
 button[type="submit"]:hover {
-  background-color: #0069d9;
-  color: white;
+  background-color: #1D4ED8;
 }
-.user {
+
+/* Người dùng và giỏ hàng */
+.user, .cart {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
+  gap: 10px;
+}
+.user i, .cart i {
+  font-size: 28px;
+  color: #1F2937;
 }
 .user p {
-  font-size: 24px;
-  color: #333;
-  margin-left: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: 16px;
+  color: #1F2937;
 }
-.user i,
-.cart i {
-   font-size: 36px;
-  color: #333;
-}
-.user,
-.cart {
-  margin-left: 0;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-}
-.user img,
-.cart img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
+
+/* Menu chính */
 .menu-list {
-  overflow: hidden;
-  background-color: #333;
-  display: inline-flex;
+  background-color: #1F2937; /* Dark navy */
   width: 100%;
+  display: flex;
   justify-content: center;
-  list-style: none;
 }
 .menu-list ul {
+  display: flex;
+  list-style: none;
   list-style-type: none;
+
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: center;
-}
-.menu-list li {
-  padding: 14px 20px;
-  text-align: center;
-  color: white;
-  font-size: 24px;
 }
 .menu-list li a {
+  display: block;
+  padding: 14px 20px;
   text-decoration: none;
-  text-align: center;
   color: white;
-  font-size: 20px;
-  padding: 14px 16px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
 .menu-list li a:hover {
-  background-color: #111;
+  background-color: #2563EB;
   color: white;
-}
-.owl-carousel .item img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-.new-product {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 20px;
 }
