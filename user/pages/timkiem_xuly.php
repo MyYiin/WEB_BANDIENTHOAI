@@ -7,12 +7,15 @@
          echo "<p class='text-danger'>Vui lòng nhập từ khóa để tìm kiếm.</p>";
         return;
     }
-
-    $sql = "SELECT * FROM tbl_sanpham WHERE TenSanPham LIKE ? OR CauHinh LIKE ?";
+    $sql = "SELECT sp.* FROM tbl_sanpham sp  JOIN tbl_nhasanxuat nsx ON sp.IdNhaSanXuat = nsx.IdNhaSanXuat
+            WHERE sp.TenSanPham LIKE ? 
+            OR sp.CauHinh LIKE ? 
+            OR nsx.TenNhaSanXuat LIKE ?";
 
     $stament = $connect->prepare($sql);
     $sql_search = "%$search%";
-    $stament->bind_param("ss", $sql_search, $sql_search);
+    $stament->bind_param("sss", $sql_search, $sql_search, $sql_search);
+
     $stament->execute();
     $result = $stament->get_result();
 

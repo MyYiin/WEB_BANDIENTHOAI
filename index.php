@@ -37,7 +37,7 @@
 
             <!-- Search -->
             <form class="search-bar d-flex flex-grow-1 mx-3" id="search-form" style="max-width: 500px;">
-                <input class="form-control me-2" type="search" name="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search" required>
+                <input class="form-control me-2" type="search" id="searchInput" name="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search" required>
                 <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
             </form>
 
@@ -92,19 +92,16 @@
 
             <!-- Dropdown hover -->
             <li class="nav-item position-relative group">
-               <a class="nav-link text-white d-flex align-items-center gap-2" href="#">
-                    Danh mục <i class="fas 	fa-angle-down small"></i>
-                </a>
+               <a class="nav-link text-white d-flex align-items-center gap-2" href="#">Danh mục <i class="fas 	fa-angle-down small"></i> </a>
                 <ul class="dropdown-menu-custom">
-                <li><a class="dropdown-item-custom" href="#">iPhone</a></li>
-                <li><a class="dropdown-item-custom" href="#">Samsung</a></li>
-                <li><a class="dropdown-item-custom" href="#">Xiaomi</a></li>
-                <li><a class="dropdown-item-custom" href="#">Oppo</a></li>
+                    <li><a class="dropdown-item-custom" href="#" onclick="selectSearch('iPhone')">iPhone</a></li>
+                    <li><a class="dropdown-item-custom" href="#" onclick="selectSearch('Samsung')">Samsung</a></li>
+                    <li><a class="dropdown-item-custom" href="#" onclick="selectSearch('Xiaomi')">Xiaomi</a></li>
+                    <li><a class="dropdown-item-custom" href="#" onclick="selectSearch('Oppo')">Oppo</a></li>
                 </ul>
             </li>
 
-            <li class="nav-item"><a class="nav-link text-white" href="#">Liên hệ</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#">Khách hàng</a></li>
+           <li class="nav-item"><a class="nav-link text-white" href="#contact-section">Liên hệ</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#">Giới thiệu</a></li>
             </ul>
         </div>
@@ -175,6 +172,42 @@
 
     </div>
 
+            <!-- Giới thiệu -->
+        <section id="about-section" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center text-primary mb-4">Giới thiệu về Phone Store</h2>
+                <p class="text-center mb-4">
+                    Phone Store là cửa hàng chuyên cung cấp các dòng điện thoại chính hãng từ Apple, Samsung, Xiaomi, Oppo và nhiều thương hiệu nổi tiếng khác.
+                    Với phương châm “Uy tín – Chất lượng – Giá tốt”, chúng tôi cam kết mang đến trải nghiệm mua sắm tuyệt vời cho khách hàng.
+                </p>
+            </div>
+        </section>
+
+        <!-- Liên hệ -->
+        <section id="contact-section" class="py-5 bg-white border-top">
+            <div class="container">
+                <h2 class="text-center text-primary mb-4">Liên hệ với chúng tôi</h2>
+                <form class="row g-3" method="post" action="#">
+                    <div class="col-md-6">
+                        <label for="contactName" class="form-label">Họ và tên</label>
+                        <input type="text" class="form-control" id="contactName" name="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="contactEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="contactEmail" name="email" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="contactMessage" class="form-label">Nội dung</label>
+                        <textarea class="form-control" id="contactMessage" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary px-4">Gửi liên hệ</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
     <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -188,5 +221,6 @@
     <script src="user/script/xemchitiet.js"></script>
     <script src="user/script/loadmore.js"></script>
     <script src="user/script/timkiem.js"></script>
+     <script src="user/script/timkiem_menu.js"></script>
 </body>
 </html>
