@@ -41,7 +41,7 @@
 			echo "<div class='khungsanpham'>";
 				echo "<div class='card'>";					
 					echo "<a href='sanpham_chitiet.php?id_sp=" . $row['IdSanPham'] . "&id_nsx=" . $row['IdNhaSanXuat'] . "'>";
-						echo "<img class='hinhanhphim' src=../images/" . $row["HinhAnh"] . "  style='width: 190px; height: 140px;'>";
+						echo "<img class='hinhanhphim' src=user/images/" . $row["HinhAnh"] . "  style='width: 190px; height: 140px;'>";
 						echo "<span class='tenphim' ></span> <br />";
 					echo "</a>";
 					echo "<span class=\"luotxem\">". $row['LuotXem'] ." lượt xem </span><span class=\"giaban\">". number_format($giaban)." đ</span>";
