@@ -36,7 +36,7 @@
             </div>
 
             <!-- Search -->
-            <form class="search-bar d-flex flex-grow-1 mx-3" id="search-form" style="max-width: 500px;" action="user/pages/timkiem_xuly.php" method="GET">
+            <form class="search-bar d-flex flex-grow-1 mx-3" id="search-form" style="max-width: 500px;">
                 <input class="form-control me-2" type="search" name="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search" required>
                 <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
             </form>
@@ -68,7 +68,7 @@
             </div>
 
             <!-- Cart -->
-            <a href="giohang.php" class="text-dark position-relative fs-5">
+            <a href="user/pages/giohang.php" class="text-dark position-relative fs-5">
                 <i class="fas fa-cart-shopping"></i>
                 <!-- Thêm số lượng nếu có -->
                 <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span> -->
@@ -77,19 +77,34 @@
         </div>
         </div>
 
-        <!-- Menu -->
+        <!-- Menu chính -->
         <div class="menu bg-primary text-white">
         <div class="container">
             <ul class="nav justify-content-center py-2">
-            <li class="nav-item"><a class="nav-link text-white" href="index.php">Trang chủ</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#">Danh mục</a></li>
+            
+            <li class="nav-item">
+                <a class="nav-link text-white" href="index.php">Trang chủ</a>
+            </li>
+
+            <!-- Dropdown hover -->
+            <li class="nav-item position-relative group">
+               <a class="nav-link text-white d-flex align-items-center gap-2" href="#">
+                    Danh mục <i class="fas 	fa-angle-down small"></i>
+                </a>
+                <ul class="dropdown-menu-custom">
+                <li><a class="dropdown-item-custom" href="#">iPhone</a></li>
+                <li><a class="dropdown-item-custom" href="#">Samsung</a></li>
+                <li><a class="dropdown-item-custom" href="#">Xiaomi</a></li>
+                <li><a class="dropdown-item-custom" href="#">Oppo</a></li>
+                </ul>
+            </li>
+
             <li class="nav-item"><a class="nav-link text-white" href="#">Liên hệ</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#">Khách hàng</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#">Giới thiệu</a></li>
             </ul>
         </div>
         </div>
-
 
         <!-- main content -->
         <div id="content">

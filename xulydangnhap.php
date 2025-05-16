@@ -45,6 +45,9 @@
                         header("Location: index.php");
                         exit();
                     }
+                    if (isset($_GET['msg']) && $_GET['msg'] === 'must_login_to_buy') {
+                        echo "<div class='alert alert-warning'>Vui lòng đăng nhập để mua hàng.</div>";
+                    }           
                 }
                 else
                 {
