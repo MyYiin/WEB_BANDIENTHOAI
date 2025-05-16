@@ -102,7 +102,8 @@
             </li>
 
            <li class="nav-item"><a class="nav-link text-white" href="#contact-section">Liên hệ</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#">Giới thiệu</a></li>
+           <li class="nav-item"><a class="nav-link text-white" href="#about-section">Giới thiệu</a></li>
+
             </ul>
         </div>
         </div>
@@ -172,16 +173,26 @@
 
     </div>
 
-            <!-- Giới thiệu -->
-        <section id="about-section" class="bg-light py-5">
-            <div class="container">
-                <h2 class="text-center text-primary mb-4">Giới thiệu về Phone Store</h2>
-                <p class="text-center mb-4">
-                    Phone Store là cửa hàng chuyên cung cấp các dòng điện thoại chính hãng từ Apple, Samsung, Xiaomi, Oppo và nhiều thương hiệu nổi tiếng khác.
-                    Với phương châm “Uy tín – Chất lượng – Giá tốt”, chúng tôi cam kết mang đến trải nghiệm mua sắm tuyệt vời cho khách hàng.
-                </p>
-            </div>
-        </section>
+                <!-- Giới thiệu -->
+            <section id="about-section" class="bg-light py-5 border-top">
+                <div class="container">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-lg-8 text-center">
+                            <h2 class="text-primary fw-bold mb-4">Giới thiệu về Phone Store</h2>
+                            <p class="lead mb-3">
+                                <strong>Phone Store</strong> là cửa hàng chuyên cung cấp các dòng điện thoại chính hãng từ các thương hiệu hàng đầu như <span class="text-primary">Apple</span>, <span class="text-success">Samsung</span>, <span class="text-warning">Xiaomi</span>, <span class="text-danger">Oppo</span> và nhiều hãng nổi tiếng khác.
+                            </p>
+                            <p>
+                                Với phương châm <em>“Uy tín – Chất lượng – Giá tốt”</em>, chúng tôi luôn nỗ lực không ngừng để mang đến cho khách hàng trải nghiệm mua sắm tốt nhất, dịch vụ tận tâm và sản phẩm đáng tin cậy.
+                            </p>
+                            <p>
+                                Hệ thống của chúng tôi hỗ trợ <strong>giao hàng toàn quốc</strong>, <strong>bảo hành chính hãng</strong> và <strong>đổi trả trong vòng 7 ngày</strong>. Đội ngũ nhân viên thân thiện, nhiệt tình luôn sẵn sàng hỗ trợ bạn mọi lúc.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
         <!-- Liên hệ -->
         <section id="contact-section" class="py-5 bg-white border-top">
