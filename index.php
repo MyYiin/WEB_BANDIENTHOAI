@@ -150,30 +150,7 @@
                 ?>
         </div>
 
-        <footer class="bg-dark text-white mt-5 p-4">
-            <div class="row">
-                <div class="col-md-4">
-                    <h6>Chính sách</h6>
-                    <ul class="list-unstyled">
-                        <li>Bảo hành 12 tháng</li>
-                        <li>Đổi trả trong 7 ngày</li>
-                        <li>Giao hàng toàn quốc</li>
-                    </ul>
-                </div>
-                    <div class="col-md-4">
-                    <h6>Liên hệ</h6>
-                    <p>Hotline: 1900 1234<br>Email: support@phonestore.vn</p>
-                </div>
-                <div class="col-md-4">
-                    <h6>Địa chỉ</h6>
-                    <p>123 Nguyễn Trãi, Q.1, TP.HCM</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-
-                <!-- Giới thiệu -->
+         <!-- Giới thiệu -->
             <section id="about-section" class="bg-light py-5 border-top">
                 <div class="container">
                     <div class="row justify-content-center align-items-center">
@@ -218,6 +195,31 @@
             </div>
         </section>
 
+
+        <footer class="bg-dark text-white mt-5 p-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <h6>Chính sách</h6>
+                    <ul class="list-unstyled">
+                        <li>Bảo hành 12 tháng</li>
+                        <li>Đổi trả trong 7 ngày</li>
+                        <li>Giao hàng toàn quốc</li>
+                    </ul>
+                </div>
+                    <div class="col-md-4">
+                    <h6>Liên hệ</h6>
+                    <p>Hotline: 1900 1234<br>Email: support@phonestore.vn</p>
+                </div>
+                <div class="col-md-4">
+                    <h6>Địa chỉ</h6>
+                    <p>123 Nguyễn Trãi, Q.1, TP.HCM</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+               
 
     <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
