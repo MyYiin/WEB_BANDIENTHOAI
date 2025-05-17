@@ -43,13 +43,13 @@
 				
 				echo "<td align='center'>";
 					if($dong["Khoa"] == 0)
-						echo "<a href='nguoidung_kichhoat.php?id=" . $dong["MaNguoiDung"] . "&khoa=1'><img src='../images/active.png' /></a>";
+						echo "<a href='nguoidung_kichhoat.php?id=" . $dong["MaNguoiDung"] . "&khoa=1'><img src='../../images/active.png' /></a>";
 					else
-						echo "<a href='nguoidung_kichhoat.php?id=" . $dong["MaNguoiDung"] . "&khoa=0'><img src='../images/ban.png' /></a>";
+						echo "<a href='nguoidung_kichhoat.php?id=" . $dong["MaNguoiDung"] . "&khoa=0'><img src='../../images/ban.png' /></a>";
 				echo "</td>";
 				
-				echo "<td align='center'><a href='suanguoidung.php?id=" . $dong["MaNguoiDung"] . "'><img src='../images/edit.png' /></a></td>";
-				echo "<td align='center'><a href='xoanguoidung.php?id=" . $dong["MaNguoiDung"] . "' onclick='return confirm(\"Bạn có muốn xóa người dùng " . $dong['TenNguoiDung'] . " không?\")'><img src='../images/delete.png' /></a></td>";
+				echo "<td align='center'><a href='suanguoidung.php?id=" . $dong["MaNguoiDung"] . "'><img src='../../images/edit.png' /></a></td>";
+				echo "<td align='center'><a href='xoanguoidung.php?id=" . $dong["MaNguoiDung"] . "' onclick='return confirm(\"Bạn có muốn xóa người dùng " . $dong['TenNguoiDung'] . " không?\")'><img src='../../images/delete.png' /></a></td>";
 			echo "</tr>";
 		}
 	?>

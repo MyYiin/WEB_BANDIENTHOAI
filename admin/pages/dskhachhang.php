@@ -33,8 +33,8 @@
 			echo "<td>" . ($row['GioiTinh'] == 0 ? "Nam" : "Nữ") . "</td>"; 
 			echo "<td>" . $row['SoDienThoai'] . "</td>"; 
 			echo "<td>" . htmlspecialchars($row['DiaChi']) . "</td>"; 
-			echo "<td><a href='suakhachhang.php?id=" . $row['MaKH'] . "'><img src='../images/edit.png' alt='Sửa' title='Sửa'/></a></td>"; 
-			echo "<td><a href='xoakhachhang.php?id=" . $row['MaKH'] . "' onclick=\"return confirm('Bạn có chắc chắn muốn xóa khách hàng này?');\"><img src='../images/delete.png' alt='Xóa' title='Xóa'/></a></td>"; 
+			echo "<td><a href='suakhachhang.php?id=" . $row['MaKH'] . "'><img src='../../images/edit.png' alt='Sửa' title='Sửa'/></a></td>"; 
+			echo "<td><a href='xoakhachhang.php?id=" . $row['MaKH'] . "' onclick=\"return confirm('Bạn có chắc chắn muốn xóa khách hàng này?');\"><img src='../../images/delete.png' alt='Xóa' title='Xóa'/></a></td>"; 
 			echo "</tr>"; 
 		}
 	} else {

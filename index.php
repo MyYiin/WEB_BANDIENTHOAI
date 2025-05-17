@@ -57,7 +57,7 @@
                     <i class="fas fa-circle-user me-1"></i> <?php echo htmlspecialchars($tenNguoiDung); ?>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                    <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
+                    <!-- <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li> -->
                     <li><a class="dropdown-item" href="dangxuat.php">Đăng xuất</a></li>
                 </ul>
                 <?php else: ?>

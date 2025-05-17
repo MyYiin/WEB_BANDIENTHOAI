@@ -39,13 +39,13 @@
 			echo "<td>" . htmlspecialchars($row['TenNhaSanXuat']) . "</td>"; 
 			echo "<td>" . $row['DonGia'] . "</td>"; 
 			echo "<td>" . $row['SoLuong'] . "</td>"; 
-			echo "<td><img src='../images/" . htmlspecialchars($row['HinhAnh']) . "' alt='" . htmlspecialchars($row['TenSanPham']) . "' width='100' height='100'/></td>";
+			echo "<td><img src='../../images/" . htmlspecialchars($row['HinhAnh']) . "' alt='" . htmlspecialchars($row['TenSanPham']) . "' width='100' height='100'/></td>";
 			echo "<td>" . $row['TiLeGiamGia'] . "</td>"; 
 			echo "<td>" . htmlspecialchars($row['MoTa']) . "</td>";
 			echo "<td>" . htmlspecialchars($row['CauHinh']) . "</td>";
 			echo "<td>" . $row['LuotXem'] . "</td>";
-			echo "<td><a href='suasanpham.php?id=" . $row['IdSanPham'] . "'><img src='../images/edit.png' alt='Sửa' title='Sửa'/></a></td>"; 
-			echo "<td><a href='xoasanpham.php?id=" . $row['IdSanPham'] . "' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');\"><img src='../images/delete.png' alt='Xóa' title='Xóa'/></a></td>"; 
+			echo "<td><a href='suasanpham.php?id=" . $row['IdSanPham'] . "'><img src='../../images/edit.png' alt='Sửa' title='Sửa'/></a></td>"; 
+			echo "<td><a href='xoasanpham.php?id=" . $row['IdSanPham'] . "' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');\"><img src='../../images/delete.png' alt='Xóa' title='Xóa'/></a></td>"; 
 			echo "</tr>"; 
 		}
 	} else {

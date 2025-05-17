@@ -25,8 +25,8 @@
 			echo "<tr>"; 
 			echo "<td>" . $row['IdNhaSanXuat'] . "</td>"; 
 			echo "<td>" . htmlspecialchars($row['TenNhaSanXuat']) . "</td>"; 
-			echo "<td><a href='suanhasanxuat.php?id=" . $row['IdNhaSanXuat'] . "'><img src='../images/edit.png' alt='Sửa' title='Sửa'/></a></td>"; 
-			echo "<td><a href='xoanhasanxuat.php?id=" . $row['IdNhaSanXuat'] . "' onclick=\"return confirm('Bạn có chắc chắn muốn xóa nhà sản xuất này?');\"><img src='../images/delete.png' alt='Xóa' title='Xóa'/></a></td>"; 
+			echo "<td><a href='suanhasanxuat.php?id=" . $row['IdNhaSanXuat'] . "'><img src='../../images/edit.png' alt='Sửa' title='Sửa'/></a></td>"; 
+			echo "<td><a href='xoanhasanxuat.php?id=" . $row['IdNhaSanXuat'] . "' onclick=\"return confirm('Bạn có chắc chắn muốn xóa nhà sản xuất này?');\"><img src='../../images/delete.png' alt='Xóa' title='Xóa'/></a></td>"; 
 			echo "</tr>"; 
 		}
 	} else {
