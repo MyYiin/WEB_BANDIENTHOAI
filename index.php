@@ -36,10 +36,11 @@
             </div>
 
             <!-- Search -->
-            <form class="search-bar d-flex flex-grow-1 mx-3" id="search-form" style="max-width: 500px;">
+            <form class="search-bar d-flex flex-grow-1 mx-3" id="search-form" action="index.php" method="get" style="max-width: 500px;">
                 <input class="form-control me-2" type="search" id="searchInput" name="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search" required>
                 <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
             </form>
+
 
 
             <!-- User & Cart -->

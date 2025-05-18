@@ -1,5 +1,5 @@
 <?php
-    include("../includes/connect.php");
+    include(__DIR__ . "/../includes/connect.php");
 
     $search = isset($_GET['search'])? trim($_GET['search']): null;
 

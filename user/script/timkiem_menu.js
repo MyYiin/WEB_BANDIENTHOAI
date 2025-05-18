@@ -1,4 +1,4 @@
 function selectSearch(keyword){
-    document.getElementById('searchInput').value = keyword;
-      document.querySelector('form').submit();
+    const encodedKeyword = encodeURIComponent(keyword.trim());
+    window.location.href = `index.php?search=${encodedKeyword}`;
 }
