@@ -3,8 +3,67 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Sửa nhà sản xuất</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/suakhachhang.css" />
+	
 </head>
+
+<style>
+    body {
+  background-color: #f7f9fc; /* nền trắng/xám nhạt */
+  color: #0d3b66; /* xanh dương đậm cho chữ */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px 15px;
+}
+
+.form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff; /* nền trắng */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
+}
+
+.form-title {
+  color: #0d3b66; /* chữ xanh đậm */
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.requirefield {
+  color: #d32f2f; /* đỏ nhẹ */
+  margin-left: 3px;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #d32f2f;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #1976d2; /* xanh dương đậm */
+  border: none;
+  font-weight: 600;
+  padding: 10px 30px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #e07b39; /* cam nhẹ khi hover */
+  color: #fff;
+}
+
+.form-check-label {
+  user-select: none;
+  margin-left: 0.3rem;
+}
+
+</style>
 <body>
 <?php	
 	include("../includes/connect.php");

@@ -1,53 +1,67 @@
+:root {
+  --lavender-light: #f5f0ff;
+  --lavender-medium: #d8bfd8;
+  --lavender-dark: #9b59b6;
+  --text-dark: #3c3c3c;
+}
+
 body {
-	font-family: Arial, sans-serif;
-	background-color: #f4f4f4;
-	padding: 30px;
+  background-color: var(--lavender-light);
+  color: var(--text-dark);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
 }
 
-.List {
-	width: 100%;
-	max-width: 1000px;
-	margin: 0 auto;
-	border-collapse: collapse;
-	background-color: #fff;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	border-radius: 8px;
-	overflow: hidden;
-	font-size: 18px;
+h2 {
+  color: var(--lavender-dark);
+  margin-bottom: 20px;
 }
 
-.List th {
-	background-color: #2c3e50;
-	color: white;
-	font-size: 20px;
-	padding: 12px 16px;
-	text-align: center;
+table {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(155 89 182 / 0.2);
 }
 
-.List td {
-	padding: 12px 16px;
-	text-align: center;
-	border-bottom: 1px solid #ddd;
+th {
+  background-color: var(--lavender-medium);
+  color: var(--lavender-dark);
 }
 
-.List tr:nth-child(even) {
-	background-color: #f2f2f2;
+td,
+th {
+  text-align: center;
+  vertical-align: middle !important;
 }
 
-.List tr:hover {
-	background-color: #f1f1f1;
+/* Icon button chung */
+a.btn-edit,
+a.btn-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
 
-/* Tiêu đề bảng nếu có */
-.tieude1 {
-	background-color: #2C3E50;
-	color: white;
-	font-size: 30px;
-	font-weight: bold;
-	text-align: center;
-	padding: 12px;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
+a.btn-edit {
+  background-color: var(--lavender-dark);
 }
 
+a.btn-edit:hover {
+  background-color: #7d3c98;
+}
 
+a.btn-delete {
+  background-color: #e74c3c;
+}
+
+a.btn-delete:hover {
+  background-color: #c0392b;
+}

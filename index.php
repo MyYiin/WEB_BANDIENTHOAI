@@ -57,10 +57,10 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                     <!-- <li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li> -->
-                    <li><a class="dropdown-item" href="user/pages/dangxuat.php">Đăng xuất</a></li>
+                    <li><a class="dropdown-item" href="dangxuat.php">Đăng xuất</a></li>
                 </ul>
                 <?php else: ?>
-                <a href="user/pages/dangnhap.php" class="btn btn-outline-primary">
+                <a href="dangnhap.php" class="btn btn-outline-primary">
                     <i class="fas fa-circle-user me-1"></i> Đăng nhập
                 </a>
                 <?php endif; ?>
@@ -233,6 +233,6 @@
     <script src="user/script/xemchitiet.js"></script>
     <script src="user/script/loadmore.js"></script>
     <script src="user/script/timkiem.js"></script>
-     <script src="user/script/timkiem_menu.js"></script>
+    <script src="user/script/timkiem_menu.js"></script>
 </body>
 </html>

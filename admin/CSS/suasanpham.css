@@ -20,32 +20,36 @@ body {
     padding: 15px;
     font-weight: bold;
 }
+
+/* Select box kiểu chuẩn, full width trừ padding */
 .styled-select {
     width: calc(100% - 20px);
     padding: 7px 10px;
     font-size: 15px;
-    border: 1px solid #ccc;/*vien mong 1px, mau xam nhat, */
-    border-radius: 4px;/*bo tron goc*/
-    box-sizing: border-box;/*Tính cả padding và border vào tổng chiều rộng/chiều cao của phần tử.*/
+    border: 1px solid #ccc; /* viền mỏng, màu xám nhạt */
+    border-radius: 4px; /* bo tròn góc */
+    box-sizing: border-box; /* tính padding và border vào tổng kích thước */
     background-color: white;
-    cursor: pointer;/*con tro chuot khi hover vao nguo dung ko duoc tao moi nsx*/
+    cursor: pointer; /* con trỏ chuột khi hover */
 }
+
 table.Form {
     width: 100%;
     border-collapse: collapse;
     padding: 20px;
-    
 }
 
 table.Form td {
     padding: 8px 20px;
     vertical-align: middle;
 }
+
 table.Form td:first-child {
-    width: 30%; /* Giảm chiều rộng label */
-    white-space: nowrap;
+    width: 30%; /* giảm chiều rộng label */
+    white-space: nowrap; /* không xuống dòng */
 }
 
+/* Input text, number, select đồng bộ kiểu dáng */
 table.Form input[type="text"],
 table.Form input[type="number"],
 table.Form select {
@@ -56,8 +60,10 @@ table.Form select {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+/* Textarea đồng bộ với input */
 table.Form textarea {
-    width: calc(100% - 20px);     /* Đồng bộ với các textbox */
+    width: calc(100% - 20px);
     padding: 7px 10px;
     font-size: 15px;
     border: 1px solid #ccc;
@@ -65,10 +71,9 @@ table.Form textarea {
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     background-color: white;
-    height: 80px;                 /*  Chiều cao khoảng 3 dòng */
-    resize: none;            /* Không cho phép thay đổi kích thước */
+    height: 80px; /* cao ~ 3 dòng */
+    resize: none; /* không cho thay đổi kích thước */
 }
-
 
 .requirefield {
     color: red;
@@ -86,6 +91,7 @@ input[type="submit"] {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
@@ -98,6 +104,7 @@ input[type="submit"]:hover {
     margin-top: 10px;
     text-align: center;
 }
+
 img {
     display: block;
     margin-top: 5px;

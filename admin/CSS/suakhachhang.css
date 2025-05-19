@@ -1,50 +1,65 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc; /* nền trắng/xám nhạt */
+    color: #0d3b66; /* chữ xanh đậm */
+    padding: 30px 15px;
 }
 
 .form-wrapper {
-    width: 600px;
+    max-width: 600px;
     margin: 40px auto;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
+    background-color: #fff; /* nền trắng */
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
     overflow: hidden;
+    padding: 30px;
 }
 
 .tieude1 {
-    background-color: #2c3e50;
-    color: white;
-    font-size: 22px;
+    background-color: transparent; /* bỏ nền đậm cũ */
+    color: #0d3b66; /* chữ xanh đậm */
+    font-size: 1.8rem;
     text-align: center;
-    padding: 15px;
-    font-weight: bold;
+    padding: 0 0 25px 0;
+    font-weight: 700;
 }
 
 table.Form {
     width: 100%;
     border-collapse: collapse;
-    padding: 20px;
-    
 }
 
 table.Form td {
-    padding: 8px 20px;
+    padding: 10px 15px;
     vertical-align: middle;
+    color: #0d3b66;
 }
+
 table.Form td:first-child {
-    width: 30%; /* Giảm chiều rộng label */
+    width: 30%;
     white-space: nowrap;
+    font-weight: 600;
 }
 
 table.Form input[type="text"],
 table.Form textarea {
     width: calc(100% - 20px);
-    padding: 7px 10px;
-    font-size: 15px;
+    padding: 8px 10px;
+    font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px;
     box-sizing: border-box;
+    background-color: #fff;
+    color: #0d3b66;
+    transition: border-color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table.Form input[type="text"]:focus,
+table.Form textarea:focus {
+    border-color: #1976d2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(25, 118, 210, 0.5);
 }
 
 table.Form input[type="radio"] {
@@ -52,30 +67,33 @@ table.Form input[type="radio"] {
 }
 
 .requirefield {
-    color: red;
-    margin-left: 6px;
-    font-weight: bold;
-    font-size: 15px;
+    color: #d32f2f; /* đỏ nhẹ */
+    margin-left: 3px;
+    font-weight: 600;
+    font-size: 1rem;
     vertical-align: middle;
 }
 
 input[type="submit"] {
-    background-color: #2c3e50;
-    color: white;
-    padding: 10px 25px;
-    font-size: 16px;
+    background-color: #1976d2; /* xanh dương đậm */
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 1rem;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background-color: #1a242f;
+    background-color: #e07b39; /* cam nhẹ khi hover */
+    color: #fff;
 }
 
 .note {
-    font-size: 13px;
-    color: #c0392b;
+    font-size: 0.9rem;
+    color: #d32f2f;
     margin-top: 10px;
     text-align: center;
 }
