@@ -1,37 +1,52 @@
 <?php
 include("../includes/connect.php"); 
 
-$sql = "SELECT dh.IdDonHang, dh.MaKH, dh.NgayDat, dh.NgayGiaoDuKien, dh.DiaChiGiaoHang, dh.TrangThai,
-        ct.IdSanPham, ct.SoLuong, ct.DonGia, sp.TenSanPham
+$trangthai = isset($_GET['trangthai']) ? intval($_GET['trangthai']) : null;
+
+$donhangs = getAllOrders($trangthai, $connect);
+
+function getAllOrders($trangthai, $connect) {
+
+    $sql = "SELECT dh.IdDonHang, dh.MaKH, dh.NgayDat, dh.NgayGiaoDuKien, dh.DiaChiGiaoHang, dh.TrangThai,
+        ct.IdSanPham, ct.SoLuong, ct.DonGia, sp.TenSanPham, nd.TenNguoiDung
         FROM tbl_donhang dh 
         INNER JOIN tbl_chitietdonhang ct ON dh.IdDonHang = ct.IdDonHang
-		INNER JOIN tbl_sanpham sp ON ct.IdSanPham = sp.IdSanPham
-        ORDER BY dh.IdDonHang";
+        INNER JOIN tbl_nguoidung nd ON dh.MaKH = nd.MaNguoiDung
+        INNER JOIN tbl_sanpham sp ON ct.IdSanPham = sp.IdSanPham";
 
-$danhsach = $connect->query($sql); 
+    if($trangthai !== null) {
+        $sql .= " WHERE dh.TrangThai = ?";
+        $stmt = $connect->prepare($sql);
+        $stmt->bind_param("i", $trangthai);
+    } else {
+        $stmt = $connect->prepare($sql);
+    }
+    
+    $stmt->execute();
+    $danhsach = $stmt->get_result();
 
-if (!$danhsach) { 
-    die("Không thể thực hiện câu lệnh SQL: ". $connect->error); 
-}
-
-$donhangs = [];
-while ($row = $danhsach->fetch_assoc()) {
-    $id = $row['IdDonHang'];
-    if (!isset($donhangs[$id])) {
-        $donhangs[$id] = [
-            'MaKH' => $row['MaKH'],
-            'NgayDat' => $row['NgayDat'],
-            'NgayGiaoDuKien' => $row['NgayGiaoDuKien'],
-            'DiaChiGiaoHang' => $row['DiaChiGiaoHang'],
-            'TrangThai' => $row['TrangThai'],
-            'Chitiet' => []
+    $donhangs = [];
+    while ($row = $danhsach->fetch_assoc()) {
+        $id = $row['IdDonHang'];
+        if (!isset($donhangs[$id])) {
+            $donhangs[$id] = [
+                'TenNguoiDung' => $row['TenNguoiDung'],
+                'NgayDat' => $row['NgayDat'],
+                'NgayGiaoDuKien' => $row['NgayGiaoDuKien'],
+                'DiaChiGiaoHang' => $row['DiaChiGiaoHang'],
+                'TrangThai' => $row['TrangThai'],
+                'Chitiet' => []
+            ];
+        }
+        
+        $donhangs[$id]['Chitiet'][] = [
+            'TenSanPham' => $row['TenSanPham'],
+            'SoLuong' => $row['SoLuong'],
+            'DonGia' => $row['DonGia'],
         ];
     }
-    $donhangs[$id]['Chitiet'][] = [
-        'TenSanPham' => $row['TenSanPham'],
-        'SoLuong' => $row['SoLuong'],
-        'DonGia' => $row['DonGia'],
-    ];
+    
+    return $donhangs;
 }
 ?>
 
@@ -43,7 +58,7 @@ while ($row = $danhsach->fetch_assoc()) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body class="bg-light">
-    <div class="container py-5">
+    <div id="main-content" class="mt-4">
         <h1 class="mb-4 text-primary">📋 Danh sách đơn hàng và chi tiết</h1>
 
         <?php if (empty($donhangs)) : ?>
@@ -67,7 +82,7 @@ while ($row = $danhsach->fetch_assoc()) {
                         </span>
                     </div>
                     <div class="card-body">
-                        <p><strong>Khách hàng:</strong> <?= htmlspecialchars($donhang['MaKH']) ?></p>
+                        <p><strong>Khách hàng:</strong> <?= htmlspecialchars($donhang['TenNguoiDung']) ?></p>
                         <p><strong>Ngày đặt:</strong> <?= htmlspecialchars($donhang['NgayDat']) ?></p>
                         <p><strong>Dự kiến giao:</strong> <?= htmlspecialchars($donhang['NgayGiaoDuKien']) ?></p>
                         <p><strong>Địa chỉ giao hàng:</strong> <?= htmlspecialchars($donhang['DiaChiGiaoHang']) ?></p>
@@ -76,7 +91,7 @@ while ($row = $danhsach->fetch_assoc()) {
                         <table class="table table-bordered table-striped">
                             <thead class="table-light">
                                 <tr>
-                                    <th>ID Sản phẩm</th>
+                                    <th>Tên sản phẩm</th>
                                     <th>Số lượng</th>
                                     <th>Đơn giá</th>
                                     <th>Thành tiền</th>
@@ -108,4 +123,5 @@ while ($row = $danhsach->fetch_assoc()) {
         <?php endif; ?>
     </div>
 </body>
+<script src="../js/dssanpham.js"></script>
 </html>
