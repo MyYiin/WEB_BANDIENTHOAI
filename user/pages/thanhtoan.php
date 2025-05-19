@@ -10,7 +10,19 @@
 
         $tongtien = 0;
 
+        $themdonhang = $connect->prepare("INSERT INTO tbl_donhang (MaKH, NgayDat, NgayGiaoDuKien, DiaChiGiaoHang, TrangThai) VALUES (?, ?, ?, ? ,?)");
+        $Makh = $_SESSION['MaND'];
+        $ngaydat = date('Y-m-d H:i:s');
+        $ngaygiaodukien = date('Y-m-d H:i:s', strtotime('+3 days'));
+        $trangthai = 0;
+        $themdonhang->bind_param('isssi', $Makh, $ngaydat, $ngaygiaodukien, $diachi, $trangthai);
+        $themdonhang->execute();
+        $IdDonHang = $connect->insert_id;
+        $themdonhang->close();
         foreach($_SESSION['cart'] as $id => $soluong){
+
+          
+
             $stmt = $connect->prepare("SELECT DonGia, SoLuong FROM tbl_sanpham WHERE IdSanPham = ?");
             $stmt->bind_param('i', $id);
             $stmt->execute();
@@ -27,9 +39,10 @@
             $capnhatkho->bind_param('ii',$soluong, $id);
             $capnhatkho->execute();
             $capnhatkho->close();
-
+;
+            
             $themchitiet = $connect->prepare("INSERT INTO tbl_chitietdonhang (IdDonHang, IdSanPham, SoLuong, DonGia) VALUES (?, ?, ?, ?)");
-            $themchitiet->bind_param('iiid', $MaDon, $id, $soluong, $dongia);
+            $themchitiet->bind_param('iiid', $IdDonHang, $id, $soluong, $dongia);
             $themchitiet->execute();
             $themchitiet->close();
         }
