@@ -124,6 +124,11 @@
             <i class="fas fa-industry"></i> Danh sách nhà sản xuất
           </a>
         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="#" data-load="dsdonhang.php" data-form="themNSX.php">
+            <i class="fas fa-industry"></i> Danh sách đơn hàng
+          </a>
+        </li>
         <li class="nav-item mt-3">
           <a class="nav-link text-warning" href="../../dangxuat.php" onclick="return confirm('Bạn có chắc chắn muốn đăng xuất không?')">
             <i class="fas fa-sign-out-alt"></i> Đăng xuất
