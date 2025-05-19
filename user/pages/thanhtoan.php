@@ -19,9 +19,9 @@
         $themdonhang->execute();
         $IdDonHang = $connect->insert_id;
         $themdonhang->close();
-        foreach($_SESSION['cart'] as $id => $soluong){
 
-          
+
+        foreach($_SESSION['cart'] as $id => $soluong){
 
             $stmt = $connect->prepare("SELECT DonGia, SoLuong FROM tbl_sanpham WHERE IdSanPham = ?");
             $stmt->bind_param('i', $id);
