@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo "<script>alert('Không được truy cập trực tiếp'); window.location.href='dangky.php';</script>";
     exit();
 }
-    include("user/includes/connect.php");
+    include("../includes/connect.php");
 
         $tennd = $_POST['tennguoidung'];
         $username = $_POST['username'];

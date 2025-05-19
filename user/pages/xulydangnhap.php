@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("user/includes/connect.php");
+include("../includes/connect.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = trim($_POST["username"]);
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if ($_SESSION['QuyenHan'] == 1) {
                     header("Location: admin/pages/index.php");
                 } else {
-                    header("Location: index.php");
+                    header("Location: ../../index.php");
                 }
                 exit();
             } else {

@@ -190,3 +190,42 @@ INSERT INTO `tbl_khachhang` (`MaKH`, `HoVaTen`, `NamSinh`, `GioiTinh`, `SoDienTh
 (13, 'Phan Văn An', 1999, 0, '0989012345', 'Kiên Giang'),
 (14, 'Lý Như Ý', 2000, 1, '0990123456', 'Cà Mau'),
 (15, 'Nguyễn Ngọc An Khang', 2004, 0, '0901234567', 'Hậu Giang');
+
+
+-- Bảng đơn hàng
+CREATE TABLE tbl_donhang (
+    IdDonHang INT NOT NULL AUTO_INCREMENT,
+    MaKH INT NOT NULL,
+    NgayDat DATETIME NOT NULL,
+    NgayGiaoDuKien DATETIME,
+    DiaChiGiaoHang VARCHAR(255),
+    TrangThai TINYINT NOT NULL,
+    PRIMARY KEY (IdDonHang)
+);
+INSERT INTO tbl_donhang (IdDonHang, MaKH, NgayDat, NgayGiaoDuKien, DiaChiGiaoHang, TrangThai)
+VALUES 
+(1, 3, '2024-05-01 08:30:00', '2024-05-05 10:00:00', N'12 Lê Lợi, TP.HCM', N'Chờ xác nhận'),
+(2, 4, '2024-05-02 09:15:00', '2024-05-06 15:00:00', N'22 Trần Hưng Đạo, Hà Nội', N'Đang giao'),
+(3, 2, '2024-05-03 10:45:00', '2024-05-08 12:30:00', N'35 Nguyễn Huệ, Đà Nẵng', N'Đã giao'),
+(4, 5, '2024-05-04 14:00:00', '2024-05-09 09:00:00', N'88 Hai Bà Trưng, Cần Thơ', N'Đã huỷ');
+
+-- Bảng chi tiết đơn hàng
+CREATE TABLE tbl_chitietdonhang (
+    IdChiTiet INT PRIMARY KEY AUTO_INCREMENT,
+    IdDonHang INT,
+    IdSanPham INT,
+    SoLuong INT,
+    DonGia DECIMAL(12,2)
+);
+INSERT INTO tbl_chitietdonhang (IdChiTiet, IdDonHang, IdSanPham, SoLuong, DonGia)
+VALUES 
+(1, 1, 1, 1, 15000000), -- iPhone cho đơn 1
+(2, 1, 3, 2, 8000000),  -- Oppo cho đơn 1
+
+(3, 2, 2, 1, 14000000), -- Samsung cho đơn 2
+(4, 2, 5, 1, 11000000), -- Xiaomi cho đơn 2
+
+(5, 3, 4, 1, 9000000),  -- Vivo cho đơn 3
+
+(6, 4, 2, 1, 14000000), -- Samsung cho đơn 4
+(7, 4, 1, 1, 15000000); -- iPhone cho đơn 4

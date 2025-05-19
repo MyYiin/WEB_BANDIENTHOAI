@@ -15,12 +15,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="user/CSS/dangky.css">
+    <link rel="stylesheet" href="../CSS/dangky.css">
     
 </head>
 <body>
     <div class="card">
-        <img src="user/images/logo.jpg" alt="MobileZone Logo" class="brand-logo">
+        <img src="../images/logo.jpg" alt="MobileZone Logo" class="brand-logo">
 
         <h2>Đăng ký</h2>
         <form action="xulydangky.php" method="POST">
