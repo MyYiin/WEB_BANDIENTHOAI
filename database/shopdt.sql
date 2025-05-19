@@ -197,17 +197,15 @@ CREATE TABLE tbl_donhang (
     IdDonHang INT NOT NULL AUTO_INCREMENT,
     MaKH INT NOT NULL,
     NgayDat DATETIME NOT NULL,
-    NgayGiaoDuKien DATETIME,
     DiaChiGiaoHang VARCHAR(255),
     TrangThai TINYINT NOT NULL,
     PRIMARY KEY (IdDonHang)
 );
-INSERT INTO tbl_donhang (IdDonHang, MaKH, NgayDat, NgayGiaoDuKien, DiaChiGiaoHang, TrangThai)
-VALUES 
-(1, 3, '2024-05-01 08:30:00', '2024-05-05 10:00:00', N'12 Lê Lợi, TP.HCM', N'Chờ xác nhận'),
-(2, 4, '2024-05-02 09:15:00', '2024-05-06 15:00:00', N'22 Trần Hưng Đạo, Hà Nội', N'Đang giao'),
-(3, 2, '2024-05-03 10:45:00', '2024-05-08 12:30:00', N'35 Nguyễn Huệ, Đà Nẵng', N'Đã giao'),
-(4, 5, '2024-05-04 14:00:00', '2024-05-09 09:00:00', N'88 Hai Bà Trưng, Cần Thơ', N'Đã huỷ');
+
+INSERT INTO `tbl_hoadon` (`IdNguoiDung`, `NgayLap`, `TongTien`) VALUES
+(1, '2024-11-01 14:30:00', 37980000),
+(2, '2024-11-03 10:15:00', 13500000),
+(4, '2024-11-05 17:20:00', 9990000);
 
 -- Bảng chi tiết đơn hàng
 CREATE TABLE tbl_chitietdonhang (
@@ -217,15 +215,15 @@ CREATE TABLE tbl_chitietdonhang (
     SoLuong INT,
     DonGia DECIMAL(12,2)
 );
-INSERT INTO tbl_chitietdonhang (IdChiTiet, IdDonHang, IdSanPham, SoLuong, DonGia)
-VALUES 
-(1, 1, 1, 1, 15000000), -- iPhone cho đơn 1
-(2, 1, 3, 2, 8000000),  -- Oppo cho đơn 1
 
-(3, 2, 2, 1, 14000000), -- Samsung cho đơn 2
-(4, 2, 5, 1, 11000000), -- Xiaomi cho đơn 2
+-- Hóa đơn 1: 2 sản phẩm
+INSERT INTO `tbl_cthoadon` (`IdHoaDon`, `IdSanPham`, `SoLuong`, `DonGia`) VALUES
+(1, 1, 1, 18990000),
+(1, 5, 1, 18990000),
 
-(5, 3, 4, 1, 9000000),  -- Vivo cho đơn 3
+-- Hóa đơn 2: 1 sản phẩm
+(2, 4, 1, 13500000),
 
-(6, 4, 2, 1, 14000000), -- Samsung cho đơn 4
-(7, 4, 1, 1, 15000000); -- iPhone cho đơn 4
+-- Hóa đơn 3: 1 sản phẩm
+(3, 2, 1, 9990000);
+

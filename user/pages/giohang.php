@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['update_cart'])) {
                     $total += $subtotal;
                 ?>
                     <tr>
-                        <td><img src="images/<?= $product['HinhAnh'] ?>" alt="" width="80"></td>
+                        <td><img src="../images/<?= $product['HinhAnh'] ?>" alt="" width="80"></td>
                         <td><?= $product['TenSanPham'] ?></td>
                         <td class="text-danger"><?= number_format($product['DonGia']) ?>₫</td>
                         <td>
