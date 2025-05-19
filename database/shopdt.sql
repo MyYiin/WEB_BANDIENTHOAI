@@ -197,6 +197,7 @@ CREATE TABLE tbl_donhang (
     IdDonHang INT NOT NULL AUTO_INCREMENT,
     MaKH INT NOT NULL,
     NgayDat DATETIME NOT NULL,
+    NgayGiaoDuKien DATETIME NOT NULL,
     DiaChiGiaoHang VARCHAR(255),
     TrangThai TINYINT NOT NULL,
     PRIMARY KEY (IdDonHang)
