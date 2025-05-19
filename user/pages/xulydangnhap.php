@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
 
                 if ($_SESSION['QuyenHan'] == 1) {
-                    header("Location: admin/pages/index.php");
+                    header("Location: ../../admin/pages/index.php");
                 } else {
                     header("Location: ../../index.php");
                 }

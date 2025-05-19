@@ -15,15 +15,15 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <!-- custom css -->
-  <link rel="stylesheet" href="../CSS/dangnhap.css">
+  <link rel="stylesheet" href="user/CSS/dangnhap.css">
 </head>
 <body>
     <div class="card">
         <!-- Thêm logo nếu có -->
-        <img src="../images/logo.jpg" alt="MobileZone Logo" class="brand-logo">
+        <img src="user/images/logo.jpg" alt="MobileZone Logo" class="brand-logo">
 
         <h2>Đăng nhập</h2>
-        <form action="xulydangnhap.php" method="POST">
+        <form action="user/pages/xulydangnhap.php" method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">Tên đăng nhập</label>
 
@@ -52,7 +52,7 @@
 
         </form>
 
-            <div class="register-link mt-3"> Bạn chưa có tài khoản? <a href="../pages/dangky.php">Đăng ký</a></div>
+            <div class="register-link mt-3"> Bạn chưa có tài khoản? <a href="user/pages/dangky.php">Đăng ký</a></div>
             
     </div>
 
