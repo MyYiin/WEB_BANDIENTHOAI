@@ -1,3 +1,44 @@
+<?php
+    require_once '../includes/connect.php';
+
+    session_start();
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $hoten = $_POST['hoten'] ?? '';
+        $diachi = $_POST['diachi'] ?? '';
+        $sdt = $_POST['sdt'] ?? '';
+
+        $tongtien = 0;
+
+        foreach($_SESSION['cart'] as $id => $soluong){
+            $stmt = $connect->prepare("SELECT DonGia, SoLuong FROM tbl_sanpham WHERE IdSanPham = ?");
+            $stmt->bind_param('i', $id);
+            $stmt->execute();
+            $listsp = $stmt->get_result();
+            $sanpham = $listsp->fetch_assoc();
+            $dongia = $sanpham['DonGia'];
+            $soluongton = $sanpham['SoLuong'];
+            
+            if($soluong > $soluongton){
+                throw new Exception("Sản phẩm {$id} không đủ số lượng trong kho");
+            }
+            
+            $capnhatkho = $connect->prepare("UPDATE tbl_sanpham SET SoLuong = SoLuong - ? WHERE IdSanPham = ?");
+            $capnhatkho->bind_param('ii',$soluong, $id);
+            $capnhatkho->execute();
+            $capnhatkho->close();
+
+            $themchitiet = $connect->prepare("INSERT INTO tbl_chitietdonhang (IdDonHang, IdSanPham, SoLuong, DonGia) VALUES (?, ?, ?, ?)");
+            $themchitiet->bind_param('iiid', $MaDon, $id, $soluong, $dongia);
+            $themchitiet->execute();
+            $themchitiet->close();
+        }
+
+        unset($_SESSION['cart']);
+        header("Location: camon.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
