@@ -125,28 +125,37 @@
           </a>
         </li>
          <li class="nav-item">
-        <!-- Menu cha có submenu -->
-        <a class="nav-link d-flex justify-content-between align-items-center" 
-           data-bs-toggle="collapse" href="#donhangSubmenu" role="button" aria-expanded="false" aria-controls="donhangSubmenu">
-          <span><i class="fas fa-industry"></i> Danh sách đơn hàng</span>
-          <i class="fas fa-chevron-down"></i>
-        </a>
+        <!-- Menu Đơn hàng có submenu -->
+        <li class="nav-item">
+          <a class="nav-link d-flex justify-content-between align-items-center"
+            data-bs-toggle="collapse" href="#donhangSubmenu"
+            role="button" aria-expanded="false" aria-controls="donhangSubmenu">
+            <span><i class="fas fa-box"></i> Danh sách đơn hàng</span>
+            <i class="fas fa-chevron-down"></i>
+          </a>
 
-        <!-- Submenu xổ xuống -->
-        <div class="collapse" id="donhangSubmenu">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li>
-              <a href="#" class="nav-link ps-4" data-load="dsdonhang.php">Tất cả đơn hàng</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link ps-4" data-load="dsdonhang.php?trangthai=0">Đơn hàng chưa xử lý</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link ps-4" data-load="dsdonhang.php?trangthai=1">Đơn hàng đã xong</a>
-            </li>
-          </ul>
-        </div>
-      </li>
+          <!-- Submenu xổ xuống -->
+          <div class="collapse" id="donhangSubmenu">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a href="#" class="nav-link ps-4" data-load="dsdonhang.php">
+                  <i class="fas fa-list me-2"></i> Tất cả đơn hàng
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link ps-4" data-load="dsdonhang.php?trangthai=0">
+                  <i class="fas fa-clock me-2"></i> Đơn hàng chưa xử lý
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link ps-4" data-load="dsdonhang.php?trangthai=2">
+                  <i class="fas fa-check-circle me-2"></i> Đơn hàng đã xong
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
 
         </li>
         <li class="nav-item mt-3">
