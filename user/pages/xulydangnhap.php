@@ -42,10 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
                 exit();
             } else {
-                echo "<script>alert('Người dùng đã bị khóa tài khoản'); window.location.href='dangnhap.php';</script>";
+                echo "<script>alert('Người dùng đã bị khóa tài khoản'); window.location.href='../../dangnhap.php';</script>";
             }
         } else {
-            echo "<script>alert('Tên đăng nhập hoặc mật khẩu không đúng'); window.location.href='dangnhap.php';</script>";
+            echo "<script>alert('Tên đăng nhập hoặc mật khẩu không đúng'); window.location.href='../../dangnhap.php';</script>";
         }
     }
 }
