@@ -8,62 +8,79 @@
 
 <style>
     body {
-  background-color: #f7f9fc; /* nền trắng/xám nhạt */
-  color: #0d3b66; /* xanh dương đậm cho chữ */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 30px 15px;
-}
+        background-color: #f7f9fc;
+        color: #0d3b66;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 30px 15px;
+    }
 
-.form-wrapper {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #fff; /* nền trắng */
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
-}
+    .form-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
+    }
 
-.form-title {
-  color: #0d3b66; /* chữ xanh đậm */
-  font-weight: 700;
-  margin-bottom: 25px;
-  text-align: center;
-  font-size: 1.8rem;
-}
+    .form-title,
+    .tieude1 {
+        color: #1976d2;
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e3f2fd;
+        margin-bottom: 25px;
+    }
 
-.requirefield {
-  color: #d32f2f; /* đỏ nhẹ */
-  margin-left: 3px;
-}
+    table.Form {
+        width: 100%;
+    }
 
-.note {
-  font-size: 0.9rem;
-  color: #d32f2f;
-  margin-bottom: 15px;
-  text-align: center;
-}
+    table.Form td {
+        padding: 10px;
+        vertical-align: top;
+    }
 
-.btn-primary {
-  background-color: #1976d2; /* xanh dương đậm */
-  border: none;
-  font-weight: 600;
-  padding: 10px 30px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  color: #fff;
-}
+    input[type="text"] {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
 
-.btn-primary:hover {
-  background-color: #e07b39; /* cam nhẹ khi hover */
-  color: #fff;
-}
+    .requirefield {
+        color: #d32f2f;
+        margin-left: 5px;
+    }
 
-.form-check-label {
-  user-select: none;
-  margin-left: 0.3rem;
-}
+    .note {
+        font-size: 0.9rem;
+        color: #d32f2f;
+        margin-bottom: 15px;
+        text-align: center;
+    }
 
+    input[type="submit"] {
+        background-color: #1976d2;
+        border: none;
+        font-weight: 600;
+        padding: 10px 30px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #e07b39;
+        color: #fff;
+    }
 </style>
+
 <body>
 <?php	
 	include("../includes/connect.php");

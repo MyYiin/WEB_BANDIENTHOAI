@@ -1,8 +1,7 @@
 <?php
 include("../includes/connect.php");
 
-// Lấy dữ liệu danh sách nhà sản xuất
-$sql = "SELECT * FROM tbl_nhasanxuat ORDER BY MaNhaSanXuat ASC";
+$sql = "SELECT * FROM tbl_nhasanxuat ORDER BY IdNhaSanXuat ASC";
 $danhsach = $connect->query($sql);
 
 if (!$danhsach) {
@@ -18,67 +17,103 @@ if (!$danhsach) {
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
     <style>
         body {
-            background-color: #f7f9fc;
-            color: #0d3b66;
+            background-color: #f0f4fc;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        .container {
+            max-width: 900px;
+        }
         h2 {
-            font-weight: 700;
+            font-weight: bold;
             color: #0d3b66;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            font-size: 1.8rem;
-        }
-        .btn-add {
-            background-color: #1976d2;
-            color: white;
-            font-weight: 600;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.4);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            padding: 8px 16px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-        .btn-add:hover {
-            background-color: #1565c0;
-            box-shadow: 0 6px 12px rgba(21, 101, 192, 0.6);
-            color: white;
-            text-decoration: none;
+            font-size: 1.6rem;
         }
         .breadcrumb {
             background-color: #e3f2fd;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 12px;
-            box-shadow: 0 2px 6px rgba(25, 118, 210, 0.2);
-            font-weight: 600;
+            font-weight: 500;
             margin-bottom: 1.5rem;
         }
         .breadcrumb a {
             color: #1976d2;
             text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .breadcrumb a:hover {
-            color: #1565c0;
-            text-decoration: underline;
         }
         .breadcrumb-item + .breadcrumb-item::before {
             content: "›";
-            color: #1976d2;
             padding: 0 0.5rem;
+            color: #1976d2;
         }
-        .breadcrumb-item.active {
-            color: #0d3b66;
+        .btn-add {
+            background-color: #1976d2;
+            color: white;
+            border-radius: 30px;
+            padding: 6px 16px;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+        .btn-add:hover {
+            background-color: #1565c0;
+            color: white;
+        }
+        table {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+        th {
+            background-color: #1976d2;
+            color: white;
+            font-weight: 600;
+            padding: 14px 16px;
+            text-align: center;
+            border-bottom: 2px solid #1565c0;
+        }
+
+        thead tr {
+            background-color: #1976d2;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Icon trong nút Thêm mới */
+        .btn-add i {
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        /* Nếu bạn muốn làm các icon Sửa / Xóa nổi bật hơn khi hover */
+        .btn-outline-warning:hover i {
+            color: black;
+        }
+        .btn-outline-danger:hover i {
+            color: white;
+        }
+
+        td, th {
+            vertical-align: middle !important;
+        }
+        thead tr {
+            background-color: #1976d2;
+            color: white;
+            font-weight: 600;
+        }
+        .btn-outline-warning:hover {
+            background-color: #ffc107;
+            color: black;
+        }
+        .btn-outline-danger:hover {
+            background-color: #dc3545;
+            color: white;
         }
     </style>
 </head>
@@ -91,57 +126,46 @@ if (!$danhsach) {
             </ol>
         </nav>
 
-        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
             <h2>Danh sách nhà sản xuất</h2>
-            <a href="themnhasanxuat.php" class="btn btn-add btn-sm" aria-label="Thêm nhà sản xuất mới">
+            <a href="themnhaasanxuat.php" class="btn btn-add btn-sm">
                 <i class="bi bi-plus-circle"></i> Thêm mới
             </a>
         </div>
 
-        <div class="table-responsive shadow-sm rounded">
-            <table class="table table-striped table-hover align-middle">
-                <thead class="table-primary">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle text-center">
+                <thead>
                     <tr>
-                        <th>Mã nhà sản xuất</th>
-                        <th>Tên nhà sản xuất</th>
-                        <th>Địa chỉ</th>
-                        <th>Điện thoại</th>
-                        <th>Email</th>
-                        <th>Sửa</th>
-                        <th>Xóa</th>
+                        <th style="width: 10%;">Mã NSX</th>
+                        <th style="width: 60%;" class="text-start ps-4">Tên nhà sản xuất</th>
+                        <th style="width: 15%;">Sửa</th>
+                        <th style="width: 15%;">Xóa</th>
                     </tr>
                 </thead>
                 <tbody>
-                <?php if ($danhsach->num_rows > 0): ?>
-                    <?php while ($dong = $danhsach->fetch_assoc()): ?>
+                    <?php if ($danhsach->num_rows > 0): ?>
+                        <?php while ($row = $danhsach->fetch_assoc()): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($row['IdNhaSanXuat']) ?></td>
+                                <td class="text-start ps-4"><?= htmlspecialchars($row['TenNhaSanXuat']) ?></td>
+                                <td>
+                                    <a href="suanhasanxuat.php?id=<?= urlencode($row['IdNhaSanXuat']) ?>" class="btn btn-sm btn-outline-warning" title="Sửa nhà sản xuất">
+                                        <i class="bi bi-pencil-fill"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="xoanhasanxuat.php?id=<?= urlencode($row['IdNhaSanXuat']) ?>" class="btn btn-sm btn-outline-danger" title="Xóa nhà sản xuất" onclick="return confirm('Bạn có chắc chắn muốn xóa nhà sản xuất này?');">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
+                    <?php else: ?>
                         <tr>
-                            <td><?= htmlspecialchars($dong["MaNhaSanXuat"]) ?></td>
-                            <td><?= htmlspecialchars($dong["TenNhaSanXuat"]) ?></td>
-                            <td><?= htmlspecialchars($dong["DiaChi"]) ?></td>
-                            <td><?= htmlspecialchars($dong["DienThoai"]) ?></td>
-                            <td><?= htmlspecialchars($dong["Email"]) ?></td>
-                            <td>
-                                <a href="suanhasanxuat.php?id=<?= urlencode($dong["MaNhaSanXuat"]) ?>" 
-                                   class="btn btn-outline-warning btn-sm" 
-                                   title="Sửa nhà sản xuất">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="xoanhasanxuat.php?id=<?= urlencode($dong["MaNhaSanXuat"]) ?>" 
-                                   class="btn btn-outline-danger btn-sm" 
-                                   onclick="return confirm('Bạn có chắc muốn xóa nhà sản xuất <?= addslashes($dong['TenNhaSanXuat']) ?> không?');"
-                                   title="Xóa nhà sản xuất">
-                                    <i class="bi bi-trash-fill"></i>
-                                </a>
-                            </td>
+                            <td colspan="4" class="text-muted">Không có nhà sản xuất nào.</td>
                         </tr>
-                    <?php endwhile; ?>
-                <?php else: ?>
-                    <tr>
-                        <td colspan="7" class="text-center text-muted">Chưa có nhà sản xuất nào.</td>
-                    </tr>
-                <?php endif; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
