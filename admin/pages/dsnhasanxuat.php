@@ -1,7 +1,8 @@
 <?php
 include("../includes/connect.php");
 
-$sql = "SELECT * FROM tbl_nhasanxuat";
+// Lấy dữ liệu danh sách nhà sản xuất
+$sql = "SELECT * FROM tbl_nhasanxuat ORDER BY MaNhaSanXuat ASC";
 $danhsach = $connect->query($sql);
 
 if (!$danhsach) {
@@ -21,158 +22,126 @@ if (!$danhsach) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
     <style>
-  body {
-    background-color: #f7f9fc;
-    color: #0d3b66;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-h2 {
-    font-weight: 700;
-    color: #0d3b66;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    font-size: 1.8rem;
-}
-
-.btn-add {
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(25, 118, 210, 0.4);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    padding: 8px 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.btn-add:hover {
-    background-color: #1565c0;
-    box-shadow: 0 6px 12px rgba(21, 101, 192, 0.6);
-    color: white;
-    text-decoration: none;
-}
-
-.table-responsive {
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
-}
-
-table thead {
-    background-color: #1976d2;
-    color: #fff;
-    font-weight: 600;
-    border-bottom: 2px solid #1565c0;
-}
-
-table tbody tr:hover {
-    background-color: #bbdefb;
-}
-
-.btn-outline-warning {
-    color: #f57c00;
-    border-color: #f57c00;
-    font-weight: 600;
-}
-
-.btn-outline-warning:hover {
-    background-color: #f57c00;
-    color: white;
-}
-
-.btn-outline-danger {
-    color: #e53946;
-    border-color: #e53946;
-    font-weight: 600;
-}
-
-.btn-outline-danger:hover {
-    background-color: #9b2226;
-    color: white;
-}
-
-@media (max-width: 576px) {
-    .btn-add {
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 1rem;
-    }
-}
-.table-responsive {
-    border-radius: 12px;
-    overflow: hidden; /* quan trọng để bo tròn phần con bên trong */
-    background-color: #fff;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Tô màu nền và bo góc trên cho thead */
-table thead {
-    background-color: #1976d2 !important; /* !important nếu bị ghi đè */
-    color: #fff;
-    font-weight: 600;
-    border-bottom: 2px solid #1565c0;
-}
-
-table thead tr:first-child th:first-child {
-    border-top-left-radius: 12px;
-}
-
-table thead tr:first-child th:last-child {
-    border-top-right-radius: 12px;
-}
-
-
+        body {
+            background-color: #f7f9fc;
+            color: #0d3b66;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h2 {
+            font-weight: 700;
+            color: #0d3b66;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-size: 1.8rem;
+        }
+        .btn-add {
+            background-color: #1976d2;
+            color: white;
+            font-weight: 600;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(25, 118, 210, 0.4);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .btn-add:hover {
+            background-color: #1565c0;
+            box-shadow: 0 6px 12px rgba(21, 101, 192, 0.6);
+            color: white;
+            text-decoration: none;
+        }
+        .breadcrumb {
+            background-color: #e3f2fd;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(25, 118, 210, 0.2);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .breadcrumb a {
+            color: #1976d2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb a:hover {
+            color: #1565c0;
+            text-decoration: underline;
+        }
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: "›";
+            color: #1976d2;
+            padding: 0 0.5rem;
+        }
+        .breadcrumb-item.active {
+            color: #0d3b66;
+        }
     </style>
 </head>
 <body>
     <div class="container my-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Nhà sản xuất</li>
+            </ol>
+        </nav>
+
         <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
             <h2>Danh sách nhà sản xuất</h2>
-            <a href="themnhaasanxuat.php" class="btn btn-add btn-sm" aria-label="Thêm nhà sản xuất mới">
+            <a href="themnhasanxuat.php" class="btn btn-add btn-sm" aria-label="Thêm nhà sản xuất mới">
                 <i class="bi bi-plus-circle"></i> Thêm mới
             </a>
         </div>
 
         <div class="table-responsive shadow-sm rounded">
-            <table class="table table-hover align-middle mb-0">
-                <thead>
-                    <tr class="text-center">
-                        <th style="width: 10%;">Mã NSX</th>
-                        <th style="width: 60%;">Tên nhà sản xuất</th>
-                        <th style="width: 15%;">Sửa</th>
-                        <th style="width: 15%;">Xóa</th>
+            <table class="table table-striped table-hover align-middle">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Mã nhà sản xuất</th>
+                        <th>Tên nhà sản xuất</th>
+                        <th>Địa chỉ</th>
+                        <th>Điện thoại</th>
+                        <th>Email</th>
+                        <th>Sửa</th>
+                        <th>Xóa</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if ($danhsach->num_rows > 0): ?>
-                        <?php while ($row = $danhsach->fetch_assoc()): ?>
-                            <tr>
-                                <td class="text-center"><?= htmlspecialchars($row['IdNhaSanXuat']) ?></td>
-                                <td><?= htmlspecialchars($row['TenNhaSanXuat']) ?></td>
-                                <td class="text-center">
-                                    <a href="suanhasanxuat.php?id=<?= urlencode($row['IdNhaSanXuat']) ?>" class="btn btn-sm btn-outline-warning" title="Sửa nhà sản xuất">
-                                        <i class="bi bi-pencil-fill"></i>
-                                    </a>
-                                </td>
-                                <td class="text-center">
-                                    <a href="xoanhasanxuat.php?id=<?= urlencode($row['IdNhaSanXuat']) ?>" class="btn btn-sm btn-outline-danger" title="Xóa nhà sản xuất" onclick="return confirm('Bạn có chắc chắn muốn xóa nhà sản xuất này?');">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        <?php endwhile; ?>
-                    <?php else: ?>
+                <?php if ($danhsach->num_rows > 0): ?>
+                    <?php while ($dong = $danhsach->fetch_assoc()): ?>
                         <tr>
-                            <td colspan="4" class="text-center text-muted">Không có nhà sản xuất nào.</td>
+                            <td><?= htmlspecialchars($dong["MaNhaSanXuat"]) ?></td>
+                            <td><?= htmlspecialchars($dong["TenNhaSanXuat"]) ?></td>
+                            <td><?= htmlspecialchars($dong["DiaChi"]) ?></td>
+                            <td><?= htmlspecialchars($dong["DienThoai"]) ?></td>
+                            <td><?= htmlspecialchars($dong["Email"]) ?></td>
+                            <td>
+                                <a href="suanhasanxuat.php?id=<?= urlencode($dong["MaNhaSanXuat"]) ?>" 
+                                   class="btn btn-outline-warning btn-sm" 
+                                   title="Sửa nhà sản xuất">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="xoanhasanxuat.php?id=<?= urlencode($dong["MaNhaSanXuat"]) ?>" 
+                                   class="btn btn-outline-danger btn-sm" 
+                                   onclick="return confirm('Bạn có chắc muốn xóa nhà sản xuất <?= addslashes($dong['TenNhaSanXuat']) ?> không?');"
+                                   title="Xóa nhà sản xuất">
+                                    <i class="bi bi-trash-fill"></i>
+                                </a>
+                            </td>
                         </tr>
-                    <?php endif; ?>
+                    <?php endwhile; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="7" class="text-center text-muted">Chưa có nhà sản xuất nào.</td>
+                    </tr>
+                <?php endif; ?>
                 </tbody>
             </table>
         </div>

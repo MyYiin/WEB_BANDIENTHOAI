@@ -25,7 +25,7 @@
         echo "Vui lòng chọn hình ảnh sản phẩm!";
     } else {
         // Xử lý hình ảnh
-        $target_dir = "../images/";
+        $target_dir = "../../images/";
         $target_file = $target_dir . basename($_FILES["HinhAnh"]["name"]);
         $HinhAnh = basename($_FILES["HinhAnh"]["name"]);
 

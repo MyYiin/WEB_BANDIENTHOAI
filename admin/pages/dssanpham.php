@@ -206,11 +206,46 @@
                 margin-bottom: 0.5rem;
             }
         }
-    </style>
+        .breadcrumb {
+            background-color: #e3f2fd; /* nền xanh nhạt */
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(25, 118, 210, 0.2);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb a {
+            color: #1976d2; /* màu xanh dương */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #1565c0;
+            text-decoration: underline;
+        }
+
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: "›"; /* dấu phân cách */
+            color: #1976d2;
+            padding: 0 0.5rem;
+        }
+
+        .breadcrumb-item.active {
+            color: #0d3b66; /* màu đậm cho item hiện tại */
+        }
+ </style>
 </head>
 
 <body>
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
+            </ol>
+        </nav>
         <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
             <h4><i class="bi bi-phone"></i> Danh sách sản phẩm</h4>
             <a href="themsanpham.php" class="btn-add" aria-label="Thêm sản phẩm mới">

@@ -10,12 +10,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
-      background-color: #f7f9fc; /* nền trắng/xám nhạt */
-      color: #0d3b66; /* xanh dương đậm cho chữ */
+      background-color: #f7f9fc;
+      color: #0d3b66;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     .sidebar {
-      background-color: #e3f2fd; /* xanh dương nhạt */
+      background-color: #e3f2fd;
       min-height: 100vh;
       padding: 1.5rem 1rem;
       border-right: 1px solid #cfd8dc;
@@ -31,12 +31,12 @@
       gap: 0.5rem;
     }
     .sidebar .nav-link:hover {
-      background-color: #1976d2; /* xanh dương đậm hơn */
+      background-color: #1976d2;
       color: #fff;
       text-decoration: none;
     }
     .sidebar .nav-link.text-warning {
-      color: #d32f2f; /* đỏ để nổi bật nút đăng xuất */
+      color: #d32f2f; 
     }
     main {
       padding: 2rem;
@@ -61,7 +61,7 @@
       margin-bottom: 0.5rem;
     }
     .dashboard-card.secondary {
-      background-color: #d0e8ff; /* xanh nhẹ cho card phụ */
+      background-color: #d0e8ff;
     }
     .stats {
       display: flex;
