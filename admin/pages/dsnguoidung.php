@@ -201,7 +201,7 @@
 						<th>Họ và tên</th>
 						<th>Tên đăng nhập</th>
 						<th>Quyền</th>
-						<!-- <th>Kích hoạt</th> -->
+						<th>Kích hoạt</th>
 						<th>Sửa</th>
 						<th>Xóa</th>
 					</tr>
