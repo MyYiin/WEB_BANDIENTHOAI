@@ -23,8 +23,8 @@
 
 		<style>
 			body {
-				background-color: #f7f9fc; /* nền trắng/xám nhạt */
-				color: #0d3b66; /* xanh dương đậm cho chữ */
+				background-color: #f7f9fc; 
+				color: #0d3b66;
 				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 				margin: 0;
 				padding: 0;
@@ -37,7 +37,7 @@
 
 			h4 {
 				font-weight: 700;
-				color: #0d3b66; /* xanh dương đậm */
+				color: #0d3b66; 
 				margin-bottom: 1.5rem;
 			}
 
@@ -52,7 +52,7 @@
 			}
 
 			thead tr {
-				background-color: #d0e8ff; /* xanh nhẹ cho tiêu đề */
+				background-color: #d0e8ff;
 				color: #0d3b66;
 				font-weight: 600;
 			}
@@ -70,12 +70,12 @@
 			}
 
 			tbody tr:hover {
-				background-color: #e3f2fd; /* xanh dương nhạt hover */
+				background-color: #e3f2fd; 
 			}
 
-			/* Nút thêm mới */
+	
 			.btn-add {
-				background-color: #1976d2; /* xanh dương đậm */
+				background-color: #1976d2; 
 				color: white;
 				font-weight: 600;
 				border-radius: 30px;
@@ -88,12 +88,11 @@
 			}
 
 			.btn-add:hover {
-				background-color: #0d47a1; /* xanh dương đậm hơn */
+				background-color: #0d47a1; 
 				color: white;
 				text-decoration: none;
 			}
 
-			/* Link quyền */
 			.quyen-link {
 				color: #1976d2;
 				font-weight: 600;
@@ -106,21 +105,19 @@
 				text-decoration: underline;
 			}
 
-			/* Icon trạng thái */
 			.status-icon {
 				font-size: 1.3rem;
 				vertical-align: middle;
 			}
 
 			.status-icon.active {
-				color: #28a745; /* xanh lá */
+				color: #28a745;
 			}
 
 			.status-icon.inactive {
-				color: #dc3545; /* đỏ */
+				color: #dc3545;
 			}
 
-			/* Icon hành động Sửa Xóa */
 			.action-icon {
 				font-size: 1.3rem;
 				color: #1976d2;
@@ -132,7 +129,6 @@
 				cursor: pointer;
 			}
 
-			/* Responsive */
 			@media (max-width: 768px) {
 				.container {
 					padding: 1rem;
@@ -151,7 +147,7 @@
 				}
 			}
 		.breadcrumb {
-			background-color: #e3f2fd; /* nền xanh nhạt */
+			background-color: #e3f2fd; 
 			padding: 0.5rem 1rem;
 			border-radius: 12px;
 			box-shadow: 0 2px 6px rgba(25, 118, 210, 0.2);
@@ -160,7 +156,7 @@
 		}
 
 		.breadcrumb a {
-			color: #1976d2; /* màu xanh dương */
+			color: #1976d2; 
 			text-decoration: none;
 			transition: color 0.3s ease;
 		}
@@ -171,13 +167,13 @@
 		}
 
 		.breadcrumb-item + .breadcrumb-item::before {
-			content: "›"; /* dấu phân cách */
+			content: "›"; 
 			color: #1976d2;
 			padding: 0 0.5rem;
 		}
 
 		.breadcrumb-item.active {
-			color: #0d3b66; /* màu đậm cho item hiện tại */
+			color: #0d3b66;
 		}
 		</style>
 	</head>

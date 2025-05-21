@@ -5,7 +5,6 @@ $trangthai = isset($_GET['trangthai']) ? intval($_GET['trangthai']) : null;
 
 $donhangs = getAllOrders($trangthai, $connect);
 
-//em làm hàm được nè thầy 
 function getAllOrders($trangthai, $connect) {
     $sql = "SELECT dh.IdDonHang, dh.MaKH, dh.NgayDat, dh.NgayGiaoDuKien, dh.DiaChiGiaoHang, dh.TrangThai,
         ct.IdSanPham, ct.SoLuong, ct.DonGia, sp.TenSanPham, nd.TenNguoiDung

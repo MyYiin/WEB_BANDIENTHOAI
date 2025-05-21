@@ -17,14 +17,13 @@
 
 <style>
     body {
-      background-color: #f7f9fc; /* nền trắng/xám nhạt */
+      background-color: #f7f9fc; 
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #0d3b66; /* chữ xanh dương đậm */
+      color: #0d3b66; 
     }
 
-    /* Tiêu đề danh sách */
     .title-header {
-      color: #0d3b66; /* xanh dương đậm */
+      color: #0d3b66; 
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.2px;
@@ -32,9 +31,8 @@
       margin-bottom: 20px;
     }
 
-    /* Nút Thêm khách hàng */
     .btn-warm {
-      background-color: #1976d2; /* xanh dương đậm */
+      background-color: #1976d2; 
       color: white;
       font-weight: 600;
       padding: 8px 16px;
@@ -50,7 +48,7 @@
 
     .btn-warm:hover,
     .btn-warm:focus {
-      background-color: #1565c0; /* xanh dương đậm hơn */
+      background-color: #1565c0;
       box-shadow: 0 6px 12px rgba(21, 101, 192, 0.6);
       color: white;
       text-decoration: none;
@@ -61,18 +59,17 @@
       line-height: 1;
     }
 
-    /* Bảng */
     table {
-      background-color: #ffffff; /* trắng */
-      border: 2px solid #1976d2; /* viền xanh dương */
+      background-color: #ffffff;
+      border: 2px solid #1976d2; 
       border-radius: 8px;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       width: 100%;
-      table-layout: fixed; /* cố định độ rộng cột */
+      table-layout: fixed;
     }
 
     thead tr {
-      background-color: #1976d2; /* nền xanh dương */
+      background-color: #1976d2;
       color: #fff;
       font-weight: 600;
     }
@@ -82,60 +79,55 @@
     }
 
     tbody tr:hover {
-      background-color: #bbdefb; /* xanh dương nhạt khi hover */
+      background-color: #bbdefb; 
     }
 
     tbody td {
       vertical-align: middle;
-      color: #0d3b66; /* chữ xanh dương đậm */
+      color: #0d3b66;
       word-wrap: break-word;
       text-align: center;
     }
 
-    /* Căn trái cho các cột tên, địa chỉ để dễ đọc */
+   
     tbody td:nth-child(2),
     tbody td:nth-child(6) {
       text-align: left;
       padding-left: 10px;
     }
 
-    /* Nút Sửa */
     .btn-edit {
-      color: #64b5f6; /* xanh nhạt */
+      color: #64b5f6;
       font-size: 1.2rem;
       transition: color 0.3s ease;
     }
 
     .btn-edit:hover {
-      color: #1565c0; /* xanh đậm khi hover */
+      color: #1565c0;
       text-decoration: none;
     }
 
-    /* Nút Xóa */
     .btn-delete {
-      color: #e53946; /* đỏ nổi bật */
+      color: #e53946; 
       font-size: 1.2rem;
       transition: color 0.3s ease;
     }
 
     .btn-delete:hover {
-      color: #9b2226; /* đỏ đậm khi hover */
+      color: #9b2226; 
       text-decoration: none;
     }
 
-    /* Căn giữa header */
     th {
       text-align: center;
       vertical-align: middle;
       padding: 12px 8px;
     }
 
-    /* Căn giữa icon trong nút */
     td a i {
       pointer-events: none;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .container {
         padding: 0 10px;
@@ -158,7 +150,7 @@
       }
     }
     .breadcrumb {
-        background-color: #e3f2fd; /* nền xanh nhạt */
+        background-color: #e3f2fd;
         padding: 0.5rem 1rem;
         border-radius: 12px;
         box-shadow: 0 2px 6px rgba(25, 118, 210, 0.2);
@@ -167,7 +159,7 @@
     }
 
     .breadcrumb a {
-        color: #1976d2; /* màu xanh dương */
+        color: #1976d2; 
         text-decoration: none;
         transition: color 0.3s ease;
     }
@@ -178,13 +170,13 @@
     }
 
     .breadcrumb-item + .breadcrumb-item::before {
-        content: "›"; /* dấu phân cách */
+        content: "›"; 
         color: #1976d2;
         padding: 0 0.5rem;
     }
 
     .breadcrumb-item.active {
-        color: #0d3b66; /* màu đậm cho item hiện tại */
+        color: #0d3b66;
     }
 </style>
 

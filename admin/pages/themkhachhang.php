@@ -27,7 +27,7 @@
             font-weight: 700;
             margin-bottom: 25px;
             text-align: center;
-            color: #d93025; /* đỏ nóng */
+            color: #d93025; 
             text-shadow: 1px 1px 4px #ffb3b3;
         }
         label {
@@ -35,7 +35,7 @@
             font-weight: 600;
         }
         .form-control {
-            border: 2px solid #ff7043; /* cam ấm */
+            border: 2px solid #ff7043; 
             transition: border-color 0.3s ease;
         }
         .form-control:focus {

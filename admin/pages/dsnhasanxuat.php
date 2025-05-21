@@ -85,13 +85,11 @@ if (!$danhsach) {
             font-weight: 600;
         }
 
-        /* Icon trong nút Thêm mới */
         .btn-add i {
             color: white;
             font-size: 1.1rem;
         }
 
-        /* Nếu bạn muốn làm các icon Sửa / Xóa nổi bật hơn khi hover */
         .btn-outline-warning:hover i {
             color: black;
         }
@@ -128,7 +126,7 @@ if (!$danhsach) {
 
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2>Danh sách nhà sản xuất</h2>
-            <a href="themnhaasanxuat.php" class="btn btn-add btn-sm">
+            <a href="themNSX.php" class="btn btn-add btn-sm">
                 <i class="bi bi-plus-circle"></i> Thêm mới
             </a>
         </div>
