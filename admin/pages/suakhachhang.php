@@ -8,8 +8,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
    body {
-  background-color: #f7f9fc; /* nền trắng/xám nhạt */
-  color: #0d3b66; /* xanh dương đậm cho chữ */
+  background-color: #f7f9fc;
+  color: #0d3b66; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 30px 15px;
 }
@@ -17,14 +17,14 @@
 .form-wrapper {
   max-width: 600px;
   margin: 0 auto;
-  background: #fff; /* nền trắng */
+  background: #fff; 
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
 }
 
 .form-title {
-  color: #0d3b66; /* chữ xanh đậm */
+  color: #0d3b66; 
   font-weight: 700;
   margin-bottom: 25px;
   text-align: center;
@@ -32,7 +32,7 @@
 }
 
 .requirefield {
-  color: #d32f2f; /* đỏ nhẹ */
+  color: #d32f2f;
   margin-left: 3px;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .btn-primary {
-  background-color: #1976d2; /* xanh dương đậm */
+  background-color: #1976d2; 
   border: none;
   font-weight: 600;
   padding: 10px 30px;
@@ -54,7 +54,7 @@
 }
 
 .btn-primary:hover {
-  background-color: #e07b39; /* cam nhẹ khi hover */
+  background-color: #e07b39;
   color: #fff;
 }
 

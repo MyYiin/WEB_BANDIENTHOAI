@@ -28,8 +28,8 @@
 
     <style>
         body {
-            background-color: #f7f9fc; /* nền trắng/xám nhạt */
-            color: #0d3b66; /* xanh dương đậm cho chữ */
+            background-color: #f7f9fc; 
+            color: #0d3b66;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
@@ -53,7 +53,6 @@
             color: #1976d2;
         }
 
-        /* Nút thêm mới */
         .btn-add {
             background-color: #1976d2;
             color: white;
@@ -120,7 +119,6 @@
             display: block;
         }
 
-        /* Nút sửa */
         .btn-edit {
             color: #1976d2;
             font-size: 1.2rem;
@@ -132,7 +130,6 @@
             text-decoration: none;
         }
 
-        /* Nút xóa */
         .btn-delete {
             color: #dc3545;
             font-size: 1.2rem;
@@ -144,7 +141,6 @@
             text-decoration: none;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -207,7 +203,7 @@
             }
         }
         .breadcrumb {
-            background-color: #e3f2fd; /* nền xanh nhạt */
+            background-color: #e3f2fd;
             padding: 0.5rem 1rem;
             border-radius: 12px;
             box-shadow: 0 2px 6px rgba(25, 118, 210, 0.2);
@@ -216,7 +212,7 @@
         }
 
         .breadcrumb a {
-            color: #1976d2; /* màu xanh dương */
+            color: #1976d2;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -227,13 +223,13 @@
         }
 
         .breadcrumb-item + .breadcrumb-item::before {
-            content: "›"; /* dấu phân cách */
+            content: "›";
             color: #1976d2;
             padding: 0 0.5rem;
         }
 
         .breadcrumb-item.active {
-            color: #0d3b66; /* màu đậm cho item hiện tại */
+            color: #0d3b66; 
         }
  </style>
 </head>

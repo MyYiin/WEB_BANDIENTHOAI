@@ -82,7 +82,6 @@
       background-color: #e07b39;
       color: #fff;
     }
-    /* Responsive sidebar + content */
     @media (min-width: 768px) {
       .row {
         display: flex;
